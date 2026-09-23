@@ -1,0 +1,92 @@
+//Creo la base
+
+CREATE DATABASE futbol ;
+USE futbol;
+SHOW TABLES;
+
+//Creo la tabla jugadores
+
+CREATE TABLE jugadores (
+    nombre VARCHAR(100),
+    apellidos VARCHAR(100),
+    fecha_de_nacimiento VARCHAR(100),
+    posicion VARCHAR(100),
+    dorsal INT
+);
+SHOW TABLES;
+DESCRIBE jugadores;
+
+//
+
+ALTER TABLE jugadores
+ADD id_jugador INT AUTO_INCREMENT PRIMARY KEY;
+DESCRIBE jugadores;
+INSERT INTO jugadores VALUES(
+	'Fernando ',
+  'Puig Jorda',
+  '2003-12-28',
+  'Delantero',
+  '9' 	
+  NULL
+);
+SELECT * FROM jugadores;
+
+//Añado a la base de datos jugadores (se lo pido a la IA)
+INSERT INTO jugadores (nombre, apellidos, fecha_de_nacimiento, posicion, dorsal) 
+VALUES 
+    -- Porteros
+    ('Stole', 'Dimitrievski', '24/12/1993', 'Portero', 1),
+    ('Cristian', 'Rivero Sabater', '21/03/1998', 'Portero', 13),
+    ('Kayne', 'van Oevelen', '06/08/2003', 'Portero', 25),
+    
+    -- Defensas
+    ('José Manuel', 'Arias Copete', '09/10/1999', 'Defensa', 3),
+    ('Mouctar', 'Diakhaby', '18/12/1996', 'Defensa', 4),
+    ('César', 'Tárrega', '25/02/2002', 'Defensa', 5),
+    ('Justin', 'de Haas', '31/01/2000', 'Defensa', 12),
+    ('José Luis', 'Gayà Peña', '24/05/1995', 'Defensa', 14),
+    ('Dimitri', 'Foulquier', '22/03/1993', 'Defensa', 20),
+    ('Jesús', 'Vázquez Alcalde', '01/01/2003', 'Defensa', 21),
+    ('Arnau', 'Martínez', '24/04/2003', 'Defensa', 22),
+    ('Pablo', 'Maffeo', '11/07/1997', 'Defensa', 24),
+
+    -- Centrocampistas
+    ('Guido', 'Rodríguez', '11/04/1994', 'Centrocampista', 2),
+    ('Javier', 'Guerra Moreno', '12/05/2003', 'Centrocampista', 8),
+    ('Harvey', 'Elliott', '03/04/2003', 'Centrocampista', 10),
+    ('Luis', 'Rioja González', '15/10/1993', 'Centrocampista', 11),
+    ('Aliou', 'Dieng', '15/10/1997', 'Centrocampista', 15),
+    ('José Luis', 'García Vayá', '10/08/1998', 'Centrocampista', 18),
+    ('Filip', 'Ugrinić', '04/01/1999', 'Centrocampista', 23),
+
+    -- Delanteros
+    ('Umar', 'Sadiq', '01/02/1997', 'Delantero', 6),
+    ('Arnaut', 'Danjuma', '30/01/1997', 'Delantero', 7),
+    ('Hugo', 'Duro Perales', '09/11/1999', 'Delantero', 9),
+    ('Diego', 'López Noguerol', '13/05/2002', 'Delantero', 16),
+    ('Daniel', 'Raba Antolín', '28/10/1995', 'Delantero', 19);
+
+
+//Creo la tabla club
+
+CREATE TABLE club (
+    nombre VARCHAR(100),
+    ciudad VARCHAR(100),
+    estadio VARCHAR(100),
+    fecha_de_fundacion DATE
+);
+SHOW TABLES;
+DESCRIBE club;
+
+ALTER TABLE jugadores
+ADD id_club INT AUTO_INCREMENT PRIMARY KEY;
+DESCRIBE club;
+INSERT INTO club VALUES(
+	'Valencia CF ',
+  'Valencia',
+  '1919-03-18',
+  'Delantero',
+  '9' 	
+  NULL
+);
+SELECT * FROM club;

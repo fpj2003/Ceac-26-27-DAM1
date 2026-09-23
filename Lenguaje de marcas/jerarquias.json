@@ -1,0 +1,46 @@
+{
+"datos_personales": {
+		"nombre": "Fernando",
+		"apellidos": "Puig Jorda",
+		"telefono": "601737039",
+		"email": {
+				"personal": "fpj2003@gmail.com",
+				"alumno": "fernando.puig.jorda@ceac.com"
+			}
+		},
+"formacion": {
+		"Titulos": {
+			"Bachiller": {
+			"Fecha": "(2019-2021)",
+			"Itinerario": "Biosanitario",
+			"Centro": "Colegio El Armelar"
+				},
+			"Educacion Obligatoria Secundaria(ESO)": {
+			"Fecha": "(2015-2019)",
+			"Centro": "Colegio El Armelar"
+				}
+			},
+		"Cursado": {
+			"Titulacion": "Ingenieria Telemática",
+			"Centro": "Universitat de Valencia(2021-2026)",
+			"Fecha": "(2021-2026)"
+			},
+		"Cursando": {
+			"Titulacion": "Desarrollo de Aplicaciones Multiplataforma",
+			"Centro": "CEAC",
+			"Fecha": "(2026-Actualidad)"
+			}
+	},
+"experiencia_laboral": "Sin experiencia laboral",
+"idiomas": {
+		"Nativos": [
+			"Castellano",
+			"Valenciano"
+			],
+		"Titulos": {
+			"Ingles": "B2 de Cambridge"
+			}
+		},
+"conduccion": "Sin carnet de conducir"
+
+}
