@@ -1,0 +1,138 @@
+/* Le damos forma de folio al XML entero */
+curriculum {
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #f4f4f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilo para la cabecera oscura */
+datos_personales {
+    display: block;
+    background-color: #2c3e50; /* Color oscuro como en tu PDF */
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+datos_personales nombre, datos_personales apellidos {
+    display: inline-block;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+email, telefono, direccion {
+    display: block;
+    font-size: 1.1em;
+    margin-top: 5px;
+    color: #a3c2c2;
+}
+
+/* Cajas blancas para cada sección */
+experiencia_laboral, formacion, habilidades, idiomas {
+    display: block;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Títulos automáticos generados por CSS */
+experiencia_laboral::before { content: "EXPERIENCIA"; }
+formacion::before { content: "FORMACIÓN"; }
+habilidades::before { content: "HABILIDADES"; }
+idiomas::before { content: "IDIOMAS"; }
+
+experiencia_laboral::before, formacion::before, habilidades::before, idiomas::before {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #7fa8a8; /* Tono azul/verdoso de tu CV */
+    border-bottom: 2px solid #7fa8a8;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formato de los estudios y experiencia */
+experiencia, estudio {
+    display: block;
+    margin-bottom: 20px;
+}
+
+puesto, titulo {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+fecha {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+organizacion, centro {
+    display: block;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Formato de las tareas (bullet points) */
+descripcion { display: block; margin-left: 20px; }
+tarea {
+    display: list-item;
+    list-style-type: disc;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Estilo de "píldoras" para las habilidades */
+categoria { display: block; margin-bottom: 15px; }
+categoria::before {
+    content: attr(nombre); /* Coge el atributo 'nombre' del XML */
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+habilidad {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+/* Estilo para los idiomas */
+idioma { display: block; margin-bottom: 10px; }
+idioma nombre {
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+nivel {
+    display: inline-block;
+    background-color: #7fa8a8;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}

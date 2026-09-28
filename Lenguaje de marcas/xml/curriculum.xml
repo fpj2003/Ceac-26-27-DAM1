@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="estilo.css"?>
+<curriculum>	
+	<datos_personales>
+		<nombre>Fernando</nombre>
+		<apellidos>Puig Jorda</apellidos>
+		<email>fpj2003@gmail.com</email>
+		<telefono>+34601737039</telefono>
+		<direccion>C/Espigol, 46980 Paterna</direccion>
+	</datos_personales>
+	
+	<experiencia_laboral>
+		<experiencia>
+			<puesto>Voluntario como monitor</puesto>
+			<organizacion>Juniors</organizacion>
+			<fecha>sep 2021 - Presente</fecha>
+			<descripcion>
+				<tarea>Organización y supervisión de actividades recreativas y educativas para niños y adolescentes.</tarea>
+				<tarea>Fomento del trabajo en equipo y desarrollo de habilidades sociales en los participantes.</tarea>
+			</descripcion>
+		</experiencia>
+	</experiencia_laboral>
+	
+	<formacion>
+		<estudio>
+			<titulo>Desarrollo de aplicaciones multiplataforma</titulo>
+			<centro>CEAC</centro>
+			<fecha>sep 2026 - Presente</fecha>
+		</estudio>
+		<estudio>
+			<titulo>Ingeniería Telemática (Sin finalizar)</titulo>
+			<centro>Universitat de València</centro>
+			<fecha>sep 2021 - jun 2026</fecha>
+		</estudio>
+		<estudio>
+			<titulo>Título de Monitor de Actividades de Tiempo Libre Infantil y Juvenil</titulo>
+			<centro>Juniors Escola d'Animadors (JEA)</centro>
+			<fecha>feb 2022 - dic 2022</fecha>
+		</estudio>
+		<estudio>
+			<titulo>Bachillerato Itinerario Biosanitario</titulo>
+			<centro>Colegio El Armelar</centro>
+			<fecha>sep 2019 - jun 2021</fecha>
+		</estudio>
+		<estudio>
+			<titulo>ESO</titulo>
+			<centro>Colegio El Armelar</centro>
+			<fecha>sep 2015 - jun 2019</fecha>
+		</estudio>
+	</formacion>
+	<habilidades>
+		<Lenguajes_de_programacion>
+			<lenguaje>C++</lenguaje>
+			<lenguaje>Java</lenguaje>
+			<lenguaje>SQL</lenguaje>
+			<lenguaje>HTML</lenguaje>
+			<lenguaje>Python</lenguaje>
+		</Lenguajes_de_programacion>
+	</habilidades>
+
+	<idiomas>
+		<idioma>
+			<nombre>Castellano</nombre>
+			<nivel>Nativo</nivel>
+		</idioma>
+		<idioma>
+			<nombre>Inglés</nombre>
+			<nivel>B2</nivel>
+		</idioma>
+	</idiomas>
+</curriculum>
+
+
+
