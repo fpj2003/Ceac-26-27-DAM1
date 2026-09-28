@@ -1,0 +1,3 @@
+print("Inicio programa")
+assert 4>3
+print("Final del programa")
