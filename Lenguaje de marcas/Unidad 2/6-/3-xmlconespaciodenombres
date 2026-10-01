@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fpj2003:ticket xmlns:fpj2003="https://fpj2003.com/ticket">
+  <fpj2003:fecha>2026-09-29</fpj2003:fecha>
+  <fpj2003:sala>1</fpj2003:sala>
+  <fpj2003:sesion>8:30</fpj2003:sesion>
+  <fpj2003:pelicula>Una pelicula de marcas</fpj2003:pelicula>
+</fpj2003:ticket>
