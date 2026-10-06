@@ -1,0 +1,16 @@
+CREATE USER 'formula'@'localhost' IDENTIFIED BY 'Formula123$';
+
+GRANT USAGE ON *.* TO 'formula'@'localhost';
+
+ALTER USER 'formula'@'localhost' 
+REQUIRE NONE 
+WITH MAX_QUERIES_PER_HOUR 0 
+MAX_CONNECTIONS_PER_HOUR 0 
+MAX_UPDATES_PER_HOUR 0 
+MAX_USER_CONNECTIONS 0;
+
+GRANT ALL PRIVILEGES ON formula1.* 
+TO 'formula'@'localhost';
+
+FLUSH PRIVILEGES;
+
