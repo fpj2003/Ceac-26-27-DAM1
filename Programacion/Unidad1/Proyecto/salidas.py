@@ -1,0 +1,27 @@
+"""
+Ejercicio Unidad 1
+Calculadora de precio de un viaje
+Fernando Puig *
+
+"""
+#BIENVENIDA AL PROGRAMA Y ENTRADA DE INFORMACION
+print("Bienvenido al programa, por favor introduzca los datos correspondientes")	#Salida
+kilometros=input("Introduzca los kilometros del viaje")					#Entrada de variables
+consumo=input("Introduzca el consumo en litros de su vehiculo por cada 100 km ")
+precio=input("Introduzca el precio por litro del combustible ")
+pasajeros=input("Introduzca cuantos pasajeros realizaran el viaje")
+
+#CONVERTIR LAS VARIABLES A LAS NECESARIAS PARA OPERAR
+kilometros=int(kilometros)	#Convierto a entero			
+consumo=float(consumo)		#Convierto a float
+precio=float(precio)		#Convierto a float
+pasajeros=int(pasajeros)	#Convierto a entero
+
+#OPERACIONES DE CALCULO
+CIEN_KM=100						#Declaracion de variable global							
+precio_final=(kilometros*consumo/CIEN_KM)*precio	#Regla de tres para obtener los litros consumidos en el viaje y su precio total
+precio_pasajero= precio_final/pasajeros			#Division para obtener el precio a pagar de cada pasajero	
+
+#SALIDA DE INFORMACION
+print("El precio final de su viaje es de ",precio_final," euros")	#Salida de los precios
+print("El precio por cada pasasajero es de ",precio_pasajero,"euros")

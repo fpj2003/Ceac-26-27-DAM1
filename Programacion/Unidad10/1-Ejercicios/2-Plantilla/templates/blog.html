@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body{background:chocolate;font-family:sans-serif;color:midnightblue;}
+      header,main,footer{background:beige ; width:800px;margin:auto;padding:20px;}
+      main{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);}
+      h1,h2{color: black}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{titulo}}</h1>
+      <h2>{{subtitulo}}</h2>
+    </header>
+    <main>
+      {% for articulo in articulos %}
+      	<article>
+          <h4>{{articulo.titulo}}</h4>
+          <time>{{articulo.fecha}}</time>
+          <p>{{articulo.contenido}}</p>
+      </article>
+      {% endfor %}
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
+

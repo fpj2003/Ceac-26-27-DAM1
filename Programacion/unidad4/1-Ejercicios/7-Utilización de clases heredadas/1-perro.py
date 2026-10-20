@@ -1,0 +1,6 @@
+class Perro():
+	def __init__(self):
+		self.edad=0
+		self.color=""
+		self.nombre=""
+			

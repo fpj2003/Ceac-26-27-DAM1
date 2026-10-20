@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Página de Fernando</title>
+        <meta charset="utf-8">
+        <style>
+            /* Paleta de colores Modo Oscuro (Estilo Twitter/X) */
+            :root {
+                --primary: #1d9bf0;       /* Azul Twitter */
+                --primary-hover: #1a8cd8; /* Azul Twitter al pasar el ratón */
+                --bg-main: #000000;       /* Fondo negro principal (Lights out) */
+                --bg-card: #000000;       /* Fondo de las tarjetas */
+                --bg-hover: #16181c;      /* Color de fondo al hacer hover */
+                --text-main: #e7e9ea;     /* Texto principal (casi blanco) */
+                --text-muted: #71767b;    /* Texto secundario (gris) */
+                --border: #2f3336;        /* Color de las líneas divisorias */
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background-color: var(--bg-main);
+                color: var(--text-main);
+                line-height: 1.6;
+            }
+
+            /* --- HEADER Y NAVEGACIÓN --- */
+            header {
+                background-color: var(--bg-main);
+                text-align: center;
+                padding-top: 3rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            header img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid var(--bg-main); /* Evita cortes raros */
+                margin-top: 1rem;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 2.5rem;
+                color: var(--text-main);
+                letter-spacing: -0.5px;
+                font-weight: 800;
+            }
+
+            header h4 {
+                margin: 0.2rem 0 1.5rem;
+                color: var(--text-muted);
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.5rem 0;
+                position: sticky; 
+                top: 0;
+                background: rgba(0, 0, 0, 0.85); /* Negro semitransparente */
+                backdrop-filter: blur(12px); 
+                z-index: 100;
+                border-bottom: 1px solid var(--border);
+            }
+
+            nav a {
+                text-decoration: none;
+                color: var(--text-muted);
+                font-weight: 700;
+                padding: 1rem 1.2rem;
+                transition: color 0.2s ease, background 0.2s ease;
+                position: relative;
+            }
+
+            nav a:hover {
+                background-color: var(--bg-hover);
+                color: var(--text-main);
+                border-radius: 9999px; /* Botones de menú ovalados */
+            }
+
+            /* --- CONTENIDO PRINCIPAL --- */
+            main {
+                max-width: 800px; /* Un poco más estrecho, como el feed de Twitter */
+                margin: 0 auto;
+                padding: 2rem 1rem;
+                border-left: 1px solid var(--border);
+                border-right: 1px solid var(--border);
+                min-height: 100vh;
+            }
+
+            section {
+                margin-bottom: 4rem;
+                padding-top: 80px; 
+                margin-top: -80px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                color: var(--text-main);
+                margin-bottom: 1.5rem;
+                font-weight: 800;
+            }
+
+            /* --- SECCIÓN SOBRE MÍ (Etiquetas) --- */
+            #sobremi ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.6rem;
+                margin-top: 1.5rem;
+            }
+
+            #sobremi li {
+                background-color: transparent;
+                color: var(--text-main);
+                border: 1px solid var(--border);
+                padding: 0.4rem 1rem;
+                border-radius: 9999px;
+                font-size: 0.9rem;
+                font-weight: 700;
+                transition: background 0.2s;
+            }
+            
+            #sobremi li:hover {
+                background-color: var(--bg-hover);
+            }
+
+            /* --- SECCIÓN BLOG (Tarjetas estilo Tweets) --- */
+            .blog-grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            article {
+                background: var(--bg-card);
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                border-top: 1px solid var(--border);
+                margin-top: -1px; /* Para que los bordes no se dupliquen */
+                display: flex;
+                flex-direction: column;
+                transition: background 0.2s ease;
+            }
+
+            article:hover {
+                background-color: var(--bg-hover);
+                cursor: pointer;
+            }
+
+            article h4 {
+                margin: 0 0 0.5rem 0;
+                font-size: 1.2rem;
+                color: var(--text-main);
+            }
+
+            article p {
+                color: var(--text-main);
+                margin-bottom: 1.5rem;
+            }
+
+            article a {
+                align-self: flex-start;
+                padding: 0.6rem 1.2rem;
+                background: var(--primary);
+                color: white;
+                text-decoration: none;
+                border-radius: 9999px; /* Botones muy redondeados */
+                font-weight: 700;
+                font-size: 0.95rem;
+                transition: background 0.2s ease;
+            }
+
+            article a:hover {
+                background: var(--primary-hover);
+            }
+
+            /* --- FORMULARIO DE CONTACTO --- */
+            form {
+                background: transparent;
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            label {
+                font-weight: 700;
+                color: var(--text-main);
+                font-size: 0.95rem;
+            }
+
+            input[type="text"], textarea {
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                font-family: inherit;
+                font-size: 1rem;
+                box-sizing: border-box;
+                background-color: var(--bg-main);
+                color: var(--text-main);
+                transition: border-color 0.2s ease;
+            }
+
+            input[type="text"]::placeholder, textarea::placeholder {
+                color: var(--text-muted);
+            }
+
+            input[type="text"]:focus, textarea:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 1px var(--primary); /* Borde azul fino al enfocar */
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 120px;
+            }
+
+            input[type="submit"] {
+                background: var(--text-main); /* Botón de enviar en blanco (como publicar en X) */
+                color: var(--bg-main);
+                font-size: 1rem;
+                font-weight: 700;
+                padding: 1rem;
+                border: none;
+                border-radius: 9999px;
+                cursor: pointer;
+                transition: background 0.2s ease;
+                margin-top: 0.5rem;
+                align-self: flex-end; /* A la derecha como el botón de Tweet */
+                padding: 0.8rem 2rem;
+            }
+
+            input[type="submit"]:hover {
+                background: #d7dbdc;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <img src="prog.jpg" alt="Foto de Fernando">
+            <h1>Fernando Puig</h1>
+            <h4>@ferpuig_dam</h4>
+            <nav>
+                <a href="#destacado">Destacado</a>
+                <a href="#sobremi">Sobre Mi</a>
+                <a href="#blog">Blog</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="destacado">
+                <h2>Bienvenido a mi página web</h2>     
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Explora mis proyectos y conocimientos como desarrollador.</p>
+            </section>
+            
+            <section id="sobremi">
+                <h2>Sobre mi</h2>
+                <p>Soy Fernando Puig estudiante de Desarrollo de Aplicaciones Multiplataforma.</p>
+                <p>Actualmente tengo conocimientos en:</p>
+                <ul>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>SQL</li>
+                </ul>
+                <p>Durante el año iré subiendo mis progresos y programas que vaya haciendo.</p>
+            </section>
+            
+            <section id="blog">
+                <h2>Proyectos del curso</h2>    
+                <div class="blog-grid">
+                    <article>
+                        <h4>Calculadora de viajes</h4> 
+                        <p>Este programa sirve para que los usuarios puedan calcular el precio por pasajero en un viaje de forma rápida y sencilla.</p>
+                        <a href="https://github.com/fpj2003/Ceac-26-27-DAM1/blob/main/Programacion/Unidad1/Proyecto/esteticaIA.py" target="_blank">Ver código</a>
+                    </article>
+                    
+                    <article>
+                        <h4>Gestor de colecciones</h4> 
+                        <p>Permite insertar y elegir si añadir películas, series o videojuegos, además de listar el contenido y comprobar duplicados.</p>
+                        <a href="https://github.com/fpj2003/Ceac-26-27-DAM1/blob/main/Programacion/Unidad3/2-Ejercicio%20Final/8-assert.py" target="_blank">Ver código</a>
+                    </article>
+
+                    <article>
+                        <h4>Registro de partidos</h4>  
+                        <p>Este programa sirve para poder añadir partidos de fútbol a un fichero CSV externo de forma estructurada.</p>
+                        <a href="https://github.com/fpj2003/Ceac-26-27-DAM1/blob/main/Programacion/Unidad5/Ejercicio%20Final/8-grid.py" target="_blank">Ver código</a>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="contacto">
+                <h2>Enviar mensaje</h2>
+                <form>
+                    <div>
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" placeholder="¿Cómo te llamas?">
+                    </div>
+                    <div>
+                        <label>Correo electrónico</label>
+                        <input type="text" name="correo" placeholder="hola@correo.com">
+                    </div>
+                    <div>
+                        <label>Mensaje</label>
+                        <textarea name="mensaje" placeholder="¡Escribe lo que quieras!"></textarea>
+                    </div>
+                    <input type="submit" value="Enviar">
+                </form>
+            </section>
+        </main>
+
+    </body>
+</html>

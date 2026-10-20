@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <!-- Esta etiqueta es crucial para que se vea bien en móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* 1. Importamos una fuente moderna y bonita de Google Fonts */
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+      /* Reseteamos márgenes básicos */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 2. Fondo general de la página */
+      body {
+        /* Degradado oscuro de azul oscuro a violeta muy oscuro */
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        font-family: 'Outfit', sans-serif;
+        color: #e2e8f0; /* Texto gris claro */
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      /* 3. Contenedores principales (centrados y con ancho máximo) */
+      header, main, footer {
+        max-width: 1000px;
+        margin: 0 auto 30px auto;
+      }
+
+      /* 4. Estilos del Header (Efecto cristal) */
+      header {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.03); /* Fondo semi-transparente */
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px); /* Desenfoca lo que hay detrás */
+      }
+
+      header h1 {
+        font-size: 3rem;
+        /* Texto con un degradado chulísimo de morado a rosa */
+        background: linear-gradient(to right, #a855f7, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+      }
+
+      header h2 {
+        font-size: 1.2rem;
+        color: #94a3b8;
+        font-weight: 300;
+      }
+
+      /* 5. Rejilla (Grid) para los artículos */
+      main {
+        display: grid;
+        gap: 25px;
+        /* Magia pura: se adapta a móviles (1 columna) y a PC (3 columnas) automáticamente */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      /* 6. Diseño de cada Artículo (Tarjeta) */
+      article {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 25px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease; /* Animación suave */
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Efecto 3D al pasar el ratón por encima del artículo */
+      article:hover {
+        transform: translateY(-8px); /* Se levanta un poco */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra más grande */
+        border-color: rgba(236, 72, 153, 0.5); /* El borde se ilumina en rosa */
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      article h4 {
+        font-size: 1.4rem;
+        color: #f8fafc; /* Blanco puro */
+        margin-bottom: 10px;
+      }
+
+      article time {
+        font-size: 0.85rem;
+        color: #a855f7; /* Color morado para destacar la fecha */
+        font-weight: 500;
+        margin-bottom: 15px;
+        display: inline-block;
+      }
+
+      article p {
+        color: #cbd5e1;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      /* 7. Footer sencillo */
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <h1>{{titulo}}</h1>
+      <h2>{{subtitulo}}</h2>
+    </header>
+    
+    <main>
+      {% for articulo in articulos %}
+        <article>
+          <h4>{{articulo.titulo}}</h4>
+          <time>{{articulo.fecha}}</time>
+          <p>{{articulo.contenido}}</p>
+      </article>
+      {% endfor %}
+    </main>
+    
+    <footer>
+      <!-- Le he añadido un pequeño texto al footer de ejemplo -->
+      <p>© 2026 Mi Blog Increíble</p>
+    </footer>
+    
+  </body>
+</html>

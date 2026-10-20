@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Plantilla Valencia CF</title>
+    <meta charset="utf-8">
+    <!-- Importamos una fuente moderna de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+      /* --- ESTILOS GENERALES --- */
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f3f4f6; /* Un gris muy clarito de fondo */
+        margin: 0;
+        padding: 0;
+        color: #111;
+      }
+
+      /* --- CABECERA (Header) --- */
+      header {
+        background-color: #000000; /* Negro Valencia */
+        color: #ffffff; /* Blanco */
+        text-align: center;
+        padding: 2.5rem 1rem;
+        /* Línea inferior naranja para destacar */
+        border-bottom: 6px solid #FF5A00; 
+      }
+
+      header h1 {
+        margin: 0;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 2.5rem;
+      }
+
+      /* --- CONTENEDOR PRINCIPAL (Grid de cartas) --- */
+      main {
+        display: grid;
+        /* Esto hace que las cartas se adapten al tamaño de la pantalla solas */
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        padding: 3rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* --- CARTAS DE LOS JUGADORES (Articles) --- */
+      article {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 25px 20px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+        border-top: 5px solid #000000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+
+      /* Efecto al pasar el ratón por encima de la carta */
+      article:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(255, 90, 0, 0.25); /* Sombra naranja */
+        border-top: 5px solid #FF5A00; /* El borde cambia a naranja */
+      }
+
+      /* --- ELEMENTOS DE LA CARTA --- */
+      article h3 {
+        font-size: 1.4rem;
+        font-weight: 900;
+        margin: 10px 0;
+        color: #000000;
+        text-transform: uppercase;
+      }
+
+      article time {
+        display: block;
+        color: #777;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+      }
+
+      article .posicion {
+        background-color: #FF5A00; /* Fondo Naranja */
+        color: white;
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin: 10px 0;
+        text-transform: uppercase;
+      }
+
+      article .dorsal {
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: #000000;
+        margin-top: 10px;
+      }
+
+      /* Un número de dorsal gigante y semitransparente de fondo */
+      article .marca-agua-dorsal {
+        position: absolute;
+        top: -15px;
+        right: -10px;
+        font-size: 6rem;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.04);
+        line-height: 1;
+        z-index: 0;
+        pointer-events: none;
+      }
+      
+      /* Asegurarnos de que el texto quede por encima de la marca de agua */
+      article h3, article time, article .posicion, article .dorsal {
+        position: relative;
+        z-index: 1;
+      }
+      .foto-jugador {
+        width: 100%;           
+        height: 250px;         
+        object-fit: cover;     
+        object-position: center top; /* ¡NUEVO! Enfoca la parte de arriba para no cortar cabezas */
+        border-radius: 8px;    
+        margin-bottom: 15px;   
+        border: 2px solid var(--fondo-gris); 
+        background-color: #e0e0e0; /* ¡NUEVO! Fondo gris por si la imagen es transparente o tarda en cargar */
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla Valencia CF 26/27</h1>
+    </header>
+    <main>
+      <!-- Aquí se inyectarán los artículos desde JS -->
+    </main>
+    <footer>
+    </footer>
+
+    <script>
+      fetch("jugadores.json")
+      .then(function(resultado){ return resultado.json() })
+      .then(function(datos){
+        let principal = document.querySelector("main")
+        
+        datos.forEach(function(articulo){
+          // He usado las comillas invertidas de forma limpia y añadido clases HTML
+          principal.innerHTML += `
+            <article>
+              <div class="marca-agua-dorsal">${articulo.dorsal}</div>
+              <img src="${articulo.foto}" alt="Foto de ${articulo.nombre} ${articulo.apellidos}" class="foto-jugador">
+              <h3>${articulo.nombre} ${articulo.apellidos}</h3>
+              <time>Nacimiento: ${articulo.fecha_de_nacimiento}</time>
+              <p class="posicion">${articulo.posicion}</p>
+              <p class="dorsal">Dorsal: ${articulo.dorsal}</p>
+            </article>
+          `
+        })
+      })
+      .catch(function(error) {
+        console.error("Error cargando los jugadores:", error);
+      });
+    </script>
+  </body>
+</html>

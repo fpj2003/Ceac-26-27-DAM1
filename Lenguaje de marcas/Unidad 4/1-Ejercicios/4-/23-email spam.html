@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>mailing</title>
+    <meta charset="utf-8">
+    <style>
+      /* Estilos generales nivel "te voy a robar los datos" */
+      body {
+        background-color: #FFFF00; /* Amarillo fosforito que quema las retinas */
+        font-family: "Comic Sans MS", "Chalkboard SE", sans-serif; /* La fuente por excelencia del mal gusto */
+        color: #0000FF; /* Azul eléctrico puro */
+        margin: 0;
+        padding: 20px;
+      }
+
+      /* Bordes horribles y exagerados para las tablas */
+      table {
+        background-color: #00FFFF; /* Fondo cyan para contrastar horriblemente con el amarillo */
+        border: 8px dashed #FF0000; /* Borde rojo intermitente */
+        text-align: center;
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      /* Tabla interior con más colores feos */
+      table table {
+        background-color: #FF00FF; /* Fondo magenta */
+        border: 5px dotted #00FF00; /* Borde verde fosforito */
+        color: #FFFFFF;
+        text-shadow: 2px 2px #000000; /* Sombra negra exagerada para el texto */
+      }
+
+      /* Texto del premio gigante y alarmante */
+      td {
+        padding: 15px;
+      }
+
+      /* Animación para que el botón parpadee de forma molesta */
+      @keyframes parpadeo {
+        0% { background-color: #FF0000; color: #FFFF00; transform: scale(1); }
+        50% { background-color: #00FF00; color: #000000; transform: scale(1.2); }
+        100% { background-color: #FF0000; color: #FFFF00; transform: scale(1); }
+      }
+
+      /* El botón de la estafa */
+      .mi-boton {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 28px;
+        font-family: "Impact", sans-serif;
+        text-decoration: none;
+        border: 4px solid #FFFF00;
+        border-radius: 10px;
+        text-transform: uppercase;
+        animation: parpadeo 0.5s infinite; /* Parpadeo epiléptico */
+        box-shadow: 5px 5px 15px #000;
+      }
+
+      /* Pie de correo minúsculo para que no se lea bien */
+      .pie {
+        font-size: 10px;
+        color: #000;
+        font-family: Arial, sans-serif;
+        text-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" width="100%">
+      <tr>
+        <td>
+          <marquee direction="down" scrollamount="10">!!! ATENCION !!!</marquee>
+        </td>
+        <td width="800px">
+          <!-- subtabla -->
+          <table width="100%" border="1">
+            <tr>
+              <td>
+                <img src="https://i.pinimg.com/originals/b7/5e/b0/b75eb08c8f2aee61d071c6c63c1f0801.gif?nii=t" width="200px">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                ¡¡¡ ENHORABUENA !!! <br><br>
+                Usted ha sido el <b>VISITANTE NÚMERO 1.000.000</b> y ha ganado un sorteo de <b>1.000.000€</b>. <br><br>
+                Para reclamarlo de forma 100% SEGURA y SIN RIESGOS haga click en el siguiente botón inmediatamente antes de que caduque su premio:
+                <br><br>
+                <a href="https://dl.glitter-graphics.com/pub/3710/3710900c8hluygcqt.gif" class="mi-boton">!!! HAGA CLICK AQUI AHORA !!!</a>
+              </td>           
+            </tr>
+            <tr>
+              <td class="pie">
+                Este correo no es spam. Usted se ha suscrito voluntariamente. Al hacer click acepta darnos acceso a su cuenta bancaria y su alma.
+              </td>
+            </tr>
+          </table>
+          <!-- subtabla -->
+        </td>
+        <td>
+          <marquee direction="up" scrollamount="10">!!! GANADOR !!!</marquee>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

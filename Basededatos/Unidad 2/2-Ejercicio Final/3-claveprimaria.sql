@@ -1,0 +1,3 @@
+ALTER TABLE jugadores
+ADD id_jugador INT AUTO_INCREMENT PRIMARY KEY;
+DESCRIBE jugadores;

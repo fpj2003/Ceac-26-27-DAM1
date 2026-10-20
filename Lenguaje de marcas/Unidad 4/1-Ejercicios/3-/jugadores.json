@@ -1,0 +1,194 @@
+[
+  {
+    "nombre": "Stole",
+    "apellidos": "Dimitrievski",
+    "fecha_de_nacimiento": "24/12/1993",
+    "posicion": "Portero",
+    "dorsal": 1,
+    "foto": "imagenes/dimi.jpeg"
+  },
+  {
+    "nombre": "Cristian",
+    "apellidos": "Rivero Sabater",
+    "fecha_de_nacimiento": "21/03/1998",
+    "posicion": "Portero",
+    "dorsal": 13,
+    "foto": "imagenes/rivero.jpeg"
+  },
+  {
+    "nombre": "Kayne",
+    "apellidos": "van Oevelen",
+    "fecha_de_nacimiento": "06/08/2003",
+    "posicion": "Portero",
+    "dorsal": 25,
+    "foto": "imagenes/van.jpg"
+  },
+  {
+    "nombre": "José Manuel",
+    "apellidos": "Arias Copete",
+    "fecha_de_nacimiento": "09/10/1999",
+    "posicion": "Defensa",
+    "dorsal": 3,
+    "foto": "imagenes/copete.jpg"
+  },
+  {
+    "nombre": "Mouctar",
+    "apellidos": "Diakhaby",
+    "fecha_de_nacimiento": "18/12/1996",
+    "posicion": "Defensa",
+    "dorsal": 4,
+    "foto": "imagenes/diaka.jpg"
+  },
+  {
+    "nombre": "César",
+    "apellidos": "Tárrega",
+    "fecha_de_nacimiento": "25/02/2002",
+    "posicion": "Defensa",
+    "dorsal": 5,
+    "foto": "imagenes/tarrega.jpg"
+  },
+  {
+    "nombre": "Justin",
+    "apellidos": "de Haas",
+    "fecha_de_nacimiento": "31/01/2000",
+    "posicion": "Defensa",
+    "dorsal": 12,
+    "foto": "imagenes/justin.png"
+  },
+  {
+    "nombre": "José Luis",
+    "apellidos": "Gayà Peña",
+    "fecha_de_nacimiento": "24/05/1995",
+    "posicion": "Defensa",
+    "dorsal": 14,
+    "foto": "imagenes/gaya.png"
+  },
+  {
+    "nombre": "Dimitri",
+    "apellidos": "Foulquier",
+    "fecha_de_nacimiento": "22/03/1993",
+    "posicion": "Defensa",
+    "dorsal": 20,
+    "foto": "imagenes/foulqui.jpg"
+  },
+  {
+    "nombre": "Jesús",
+    "apellidos": "Vázquez Alcalde",
+    "fecha_de_nacimiento": "01/01/2003",
+    "posicion": "Defensa",
+    "dorsal": 21,
+    "foto": "imagenes/jesus.png"
+  },
+  {
+    "nombre": "Arnau",
+    "apellidos": "Martínez",
+    "fecha_de_nacimiento": "24/04/2003",
+    "posicion": "Defensa",
+    "dorsal": 22,
+    "foto": "imagenes/arnau.jpeg"
+  },
+  {
+    "nombre": "Pablo",
+    "apellidos": "Maffeo",
+    "fecha_de_nacimiento": "11/07/1997",
+    "posicion": "Defensa",
+    "dorsal": 24,
+    "foto": "imagenes/maffeo.jpeg"
+  },
+  {
+    "nombre": "Guido",
+    "apellidos": "Rodríguez",
+    "fecha_de_nacimiento": "11/04/1994",
+    "posicion": "Centrocampista",
+    "dorsal": 2,
+    "foto": "imagenes/guido.png"
+  },
+  {
+    "nombre": "Javier",
+    "apellidos": "Guerra Moreno",
+    "fecha_de_nacimiento": "12/05/2003",
+    "posicion": "Centrocampista",
+    "dorsal": 8,
+    "foto": "imagenes/javi .jpeg"
+  },
+  {
+    "nombre": "Harvey",
+    "apellidos": "Elliott",
+    "fecha_de_nacimiento": "03/04/2003",
+    "posicion": "Centrocampista",
+    "dorsal": 10,
+    "foto": "imagenes/harvey.png"
+  },
+  {
+    "nombre": "Luis",
+    "apellidos": "Rioja González",
+    "fecha_de_nacimiento": "15/10/1993",
+    "posicion": "Centrocampista",
+    "dorsal": 11,
+    "foto": "imagenes/rioja.jpg"
+  },
+  {
+    "nombre": "Aliou",
+    "apellidos": "Dieng",
+    "fecha_de_nacimiento": "15/10/1997",
+    "posicion": "Centrocampista",
+    "dorsal": 15,
+    "foto": "imagenes/dieng.png"
+  },
+  {
+    "nombre": "José Luis",
+    "apellidos": "García Vayá",
+    "fecha_de_nacimiento": "10/08/1998",
+    "posicion": "Centrocampista",
+    "dorsal": 18,
+    "foto": "imagenes/pepelu.jpeg"
+  },
+  {
+    "nombre": "Filip",
+    "apellidos": "Ugrinić",
+    "fecha_de_nacimiento": "04/01/1999",
+    "posicion": "Centrocampista",
+    "dorsal": 23,
+    "foto": "imagenes/ugrinic.jpg"
+  },
+  {
+    "nombre": "Umar",
+    "apellidos": "Sadiq",
+    "fecha_de_nacimiento": "01/02/1997",
+    "posicion": "Delantero",
+    "dorsal": 6,
+    "foto": "imagenes/sadiq.jpeg"
+  },
+  {
+    "nombre": "Arnaut",
+    "apellidos": "Danjuma",
+    "fecha_de_nacimiento": "30/01/1997",
+    "posicion": "Delantero",
+    "dorsal": 7,
+    "foto": "imagenes/danjuma.jpeg"
+  },
+  {
+    "nombre": "Hugo",
+    "apellidos": "Duro Perales",
+    "fecha_de_nacimiento": "09/11/1999",
+    "posicion": "Delantero",
+    "dorsal": 9,
+    "foto": "imagenes/duro.png"
+  },
+  {
+    "nombre": "Diego",
+    "apellidos": "López Noguerol",
+    "fecha_de_nacimiento": "13/05/2002",
+    "posicion": "Delantero",
+    "dorsal": 16,
+    "foto": "imagenes/guajin.jpeg"
+  },
+  {
+    "nombre": "Daniel",
+    "apellidos": "Raba Antolín",
+    "fecha_de_nacimiento": "28/10/1995",
+    "posicion": "Delantero",
+    "dorsal": 19,
+    "foto": "imagenes/raba.jpg"
+  }
+]

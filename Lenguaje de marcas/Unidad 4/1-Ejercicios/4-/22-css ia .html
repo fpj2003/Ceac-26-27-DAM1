@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Información de la App de Karting</title>
+    <meta charset="utf-8">
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        background-color: #f4f4f5; /* Fondo gris claro tipo asfalto suave */
+        margin: 0;
+        padding: 40px 0;
+        color: #333333;
+      }
+      
+      /* Resetear tablas para quitar bordes feos */
+      table {
+        border-collapse: collapse;
+        border: none;
+      }
+      td {
+        border: none;
+      }
+
+      /* Contenedor principal (La tarjeta blanca del correo) */
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra elegante */
+        overflow: hidden;
+      }
+
+      /* Cabecera Racing */
+      .header {
+        background-color: #e63946; /* Rojo competición */
+        color: #ffffff;
+        padding: 35px 20px;
+      }
+      .header h2 {
+        margin: 0;
+        font-size: 32px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .header p {
+        margin: 5px 0 0 0;
+        font-size: 16px;
+        opacity: 0.9;
+      }
+
+      /* Cuerpo del mensaje */
+      .body-content {
+        padding: 40px 50px;
+        text-align: left; /* Se lee mejor a la izquierda, aunque el body esté centrado */
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      /* Caja resaltada para las características */
+      .features-list {
+        background-color: #f8f9fa;
+        padding: 20px 20px 20px 40px;
+        border-left: 5px solid #e63946; /* Detalle rojo a la izquierda */
+        border-radius: 4px;
+        margin: 25px 0;
+      }
+      .features-list li {
+        margin-bottom: 12px;
+      }
+      .features-list strong {
+        color: #e63946; /* Resaltar en rojo */
+      }
+
+      /* Pie de correo */
+      .footer {
+        background-color: #1a1a1a; /* Casi negro */
+        color: #888888;
+        padding: 25px;
+        font-size: 12px;
+      }
+      .footer p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tabla envoltura exterior -->
+    <table width="100%">
+      <tr>
+        <td>
+          <!-- Margen Izquierdo -->
+        </td>
+        <td width="800px">
+          
+          <!-- INICIO SUBTABLA (El correo en sí) -->
+          <table width="100%" class="email-container">
+            <!-- Cabecera -->
+            <tr>
+              <td class="header">
+                <h2>🏁 LapMaster</h2>
+                <p>Tu Diario Digital de Karting</p>
+              </td>
+            </tr>
+            
+            <!-- Cuerpo -->
+            <tr>
+              <td class="body-content">
+                <p><strong>¡Hola, Piloto!</strong></p>
+                <p>¿Cansado de perder los tickets de papel después de cada tanda o de apuntar tus récords en notas sueltas del móvil? Llega la plataforma definitiva para los aficionados al motor.</p>
+                <p>Con nuestra nueva aplicación podrás digitalizar toda tu experiencia en la pista. Solo tienes que introducir tus datos al llegar a casa y nosotros hacemos el resto:</p>
+                
+                <ul class="features-list">
+                  <li><strong>Registra tus sesiones:</strong> Guarda el circuito, la fecha, el estado de la pista (seco/mojado) y el tipo de kart utilizado.</li>
+                  <li><strong>Analiza tus vueltas:</strong> Añade tus tiempos exactos y descubre cuál fue tu vuelta rápida del día.</li>
+                  <li><strong>Compite en el Ranking:</strong> Compara tus marcas con las de otros pilotos en igualdad de condiciones.</li>
+                </ul>
+                
+                <p>Deja de depender de los sistemas cerrados de cada circuito y unifica todo tu historial en un solo lugar.</p>
+                
+                <p style="text-align: center; font-size: 18px; margin-top: 35px; color: #1a1a1a;">
+                  <strong>¿Listo para batir tu propio récord? 🏎️💨</strong>
+                </p>
+              </td>
+            </tr>
+
+            <!-- Pie de correo -->
+            <tr>
+              <td class="footer">
+                <p>Contacto: info@tuappdekarting.com | © 2026 LapMaster App</p>
+                <p>Si no deseas recibir más correos informativos, responde a este email con la palabra BAJA.</p>
+              </td>
+            </tr>
+          </table>
+          <!-- FIN SUBTABLA -->
+
+        </td>
+        <td>
+          <!-- Margen Derecho -->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+CREATE TABLE peliculas(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(100),
+  director VARCHAR(100),
+  estreno VARCHAR(100)
+);
+
+CREATE TABLE series(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(100),
+  director VARCHAR(100),
+  estreno VARCHAR(100)
+);
+

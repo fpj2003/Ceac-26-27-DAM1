@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      html,body{padding:0px;margin:0px;width:100%;height:100%;display:flex;
+      align-items:center;justify-content:center;background:moccasin;}
+      form{background:linen;width:200px;padding:20px;display:flex;
+      flex-direction:column;gap:10px;}
+    </style>
+  </head>
+  <body>
+  <h2>Introduce una serie</h2>
+    <form method="POST" action="/procesa_serie">
+      <label>Introduce el nombre</label>
+      <input type="text" name="nombre">
+      <label>Introduce el director</label>
+      <input type="text" name="director">
+      <label>Introduce el año de estreno</label>
+      <input type="text" name="estreno">
+      <input type="submit">
+    </form>
+  </body>
+</html>

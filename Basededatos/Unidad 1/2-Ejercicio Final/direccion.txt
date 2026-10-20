@@ -1,0 +1,6 @@
+id,nombre,cargo,email_contacto
+1,Elena Valero,Directora,direccion@ceac.com
+2,Antonio Salas,Jefe de Estudios,jestudios@ceac.com
+3,Carmen López,Secretaria,secretaria@ceac.com
+4,Manuel Torres,Vicedirector,vicedireccion@ceac.com
+5,Laura Medina,Jefa de Estudios Adjunto/a,jestudios.adjunto@ceac.com

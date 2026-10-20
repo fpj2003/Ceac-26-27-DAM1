@@ -1,0 +1,17 @@
+{
+"datos_personales":{
+ 	"nombre":"Fernando",
+	"apellidos":"Puig Jorda",
+	"email":"fpj2003@gmail.com"
+  },
+  "formacion":"",
+    "experiencia_laboral":[
+  	"experiencia1",
+	"experiencia2",
+	"experiencia3",
+	"experiencia4"
+  ],
+  "idiomas":"",
+  "conduccion":"",
+  "hobbies":""
+}

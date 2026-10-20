@@ -1,0 +1,21 @@
+
+CREATE USER 'curro'@'localhost' IDENTIFIED BY 'Ceac123$';
+
+
+GRANT USAGE ON *.* TO 'curro'@'localhost';
+
+
+ALTER USER 'curro'@'localhost' 
+REQUIRE NONE 
+WITH MAX_QUERIES_PER_HOUR 0 
+MAX_CONNECTIONS_PER_HOUR 0 
+MAX_UPDATES_PER_HOUR 0 
+MAX_USER_CONNECTIONS 0;
+
+
+
+GRANT ALL PRIVILEGES ON curriculum.* 
+TO 'curro'@'localhost';
+
+FLUSH PRIVILEGES;
+

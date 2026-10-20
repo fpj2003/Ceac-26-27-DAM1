@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curriculum>	
+	<datos_personales>
+		<nombre>Fernando</nombre>
+		<apellidos>Puig Jorda</apellidos>
+		<email>fpj2003@gmail.com</email>
+		<telefono>+34601737039</telefono>
+		<direccion>C/Espigol, 46980 Paterna</direccion>
+	</datos_personales>
+	
+	<experiencia_laboral>
+		<experiencia>
+			
+		</experiencia>
+	</experiencia_laboral>
+	
+	<formacion>
+		<estudio>
+			
+		</estudio>
+	</formacion>
+	<habilidades>
+
+	</habilidades>
+
+	<idiomas>
+
+	</idiomas>
+</curriculum>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Curriculum</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background: grey;
+      }
+      main {
+        width: 210mm;
+        height: 297mm;
+        background: beige;
+        margin: auto;
+        display: flex;
+      }
+      #izquierda {
+        flex: 1;
+        background: chocolate ;
+        color: white;
+        
+      }
+      #derecha {
+        padding: 40px;
+        flex: 3;
+     p{
+      color:midnightblue;
+      }
+      
+      }
+      img {
+        width: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="izquierda">
+        <img src="/static/prog.png" alt="Foto de perfil">
+        
+        <section id="Datos_de_contacto">
+          <h3>Datos de contacto</h3>
+          <ul>
+            <li>{{contacto.email}}</li>
+            <li>{{contacto.telefono}}</li>
+          </ul>
+        </section>
+        
+	<section id="Conocimientos">
+          <h3>Habilidades</h3>
+          <p>Lenguajes de programación</p>
+          <ul>
+            {% for conocimiento in conocimientos %}
+              <li> {{ conocimiento.Lenguaje }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        
+        <section id="Idiomas">
+          <h3>Idiomas</h3>
+          <ul>
+            {% for idio in idiomas %}
+              <li>{{idio.idioma}} {{idio.titulo}}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      </div>
+      
+      <div id="derecha">
+        <!-- Usamos la tabla datos_personales -->
+        <h1>{{datos_personales.nombre}} {{datos_personales.apellidos}}</h1>
+
+        
+        <section id="formacion">
+          <h2>Formación</h2>
+          {% for estudio in formaciones %}
+          <article>
+            <!-- Usamos las columnas de la tabla formacion -->
+            <h3>{{estudio.titulo}}</h3>
+            <p>{{estudio.centro}}</p>
+            <p>{{estudio.inicio}} - {{estudio.final}}</p>
+          </article>
+          {% endfor %}
+        </section>
+        
+        <section id="experiencia">
+          <h2>Experiencia profesional</h2>
+          {% for empresa in experiencias %}
+          <article>
+            <!-- Usamos las columnas de la tabla experiencias_laborales -->
+            <h3>{{empresa.cargo}} en {{empresa.empresa}}</h3>
+            <p>{{empresa.inicio}} - {{empresa.final}}</p>
+            <p>{{empresa.descripcion}}</p>
+          </article>
+          {% endfor %}
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

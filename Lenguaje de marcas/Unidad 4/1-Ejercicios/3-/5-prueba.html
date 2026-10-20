@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Plantilla Valencia CF</title>
+    <meta charset="utf-8">
+    <!-- Importamos una fuente moderna de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+
+  </head>
+  <body>
+    <header>
+      <h1>Plantilla Valencia CF 26/27</h1>
+    </header>
+    <main>
+      <!-- Aquí se inyectarán los artículos desde JS -->
+    </main>
+    <footer>
+    </footer>
+
+    <script>
+      fetch("jugadores.json")
+      .then(function(resultado){ return resultado.json() })
+      .then(function(datos){
+        let principal = document.querySelector("main")
+        
+        datos.forEach(function(articulo){
+          // He usado las comillas invertidas de forma limpia y añadido clases HTML
+          principal.innerHTML += `
+            <article>
+              <div class="marca-agua-dorsal">${articulo.dorsal}</div>
+              <img src="${articulo.foto}" alt="Foto de ${articulo.nombre} ${articulo.apellidos}" class="foto-jugador">
+              <h3>${articulo.nombre} ${articulo.apellidos}</h3>
+              <time>Nacimiento: ${articulo.fecha_de_nacimiento}</time>
+              <p class="posicion">${articulo.posicion}</p>
+              <p class="dorsal">Dorsal: ${articulo.dorsal}</p>
+            </article>
+          `
+        })
+      })
+      .catch(function(error) {
+        console.error("Error cargando los jugadores:", error);
+      });
+    </script>
+  </body>
+</html>
