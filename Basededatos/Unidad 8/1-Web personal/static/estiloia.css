@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap');
+
+/* --- 1. Reseteo y Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  /* Mantenemos tu moccasin pero con un degradado sutil para darle profundidad */
+  background: linear-gradient(135deg, moccasin 0%, #faebd7 100%);
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px; /* Deja espacio para el menú flotante */
+  padding-bottom: 40px;
+}
+
+/* --- 2. Menú Flotante (Glassmorphism) --- */
+header {
+  position: fixed;
+  top: 20px;
+  background: rgba(240, 255, 240, 0.85); /* Honeydew semitransparente */
+  backdrop-filter: blur(12px); /* Efecto cristal borroso */
+  width: 90%;
+  max-width: 900px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+header h1 {
+  font-size: 1.8em;
+  font-weight: 900;
+  color: darkblue;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+nav {
+  display: flex;
+  gap: 5px;
+}
+
+nav a {
+  color: #64748b;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+nav a:hover {
+  background: darkblue;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 139, 0.2);
+}
+
+/* --- 3. Contenedor Principal (Tarjetas Honeydew) --- */
+main {
+  background: honeydew;
+  width: 90%;
+  max-width: 900px;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  text-align: center;
+  animation: subir 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid white;
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main h2, main h3 {
+  font-size: 2.2em;
+  color: darkblue;
+  margin-bottom: 20px;
+}
+
+main p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* --- 4. LA IMAGEN ARREGLADA --- */
+img {
+  width: 250px; /* Adiós imagen gigante */
+  height: 250px; /* La hacemos cuadrada... */
+  object-fit: cover; /* ...y recortamos el centro para que no se deforme */
+  border-radius: 50%; /* ¡Boom! Foto de perfil redonda perfecta */
+  border: 8px solid white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  margin: 30px auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+/* --- 5. Etiquetas de "Sobre mí" --- */
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+ul li {
+  background: cyan;
+  color: darkblue;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+ul li:hover {
+  background: darkblue;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* --- 6. Cuadrícula de Proyectos --- */
+main:has(article) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+main h2:first-child {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+article {
+  background: cyan;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 139, 0.1);
+}
+
+article h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+time {
+  color: #94a3b8;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+a {
+  background: #cbd5e1; /* Gris moderno */
+  color: #1e293b;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: auto;
+  transition: all 0.3s;
+}
+
+a:hover {
+  background: darkblue;
+  color: white;
+}
+
+/* --- 7. Formulario de Contacto PRO --- */
+form {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+label {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  font-size: 1em;
+  transition: all 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: darkblue;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(0, 0, 139, 0.1);
+}
+
+#boton-enviar {
+  background: darkblue;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+#boton-enviar:hover {
+  background: #00008b;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 139, 0.2);
+}
+
+/* --- 8. Footer --- */
+footer {
+  margin-top: auto;
+  padding: 30px;
+  color: #64748b;
+  font-weight: 500;
+}

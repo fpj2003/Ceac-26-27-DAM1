@@ -1,49 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <title>La web de Fernando</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="static/estilo.css">
-</head>
-<body>
-  <header>
-    <h1>Fernando Puig</h1>
-    <nav>
-      <a href="/">Inicio</a>
-      <a href="/sobremi">Sobre mi</a>
-      <a href="/proyectos">Proyectos</a>
-      <a href="/contacto">Contacto</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Mis proyectos</h2>
-    <article>
-      <h3>Programa para calcular precio de viaje</h3> 
-      <p>Este programa sirve para que los usuarios puedan calcular el precio por pasajero en un viaje</p>
-      <a href="https://github.com/fpj2003/Ceac-26-27-DAM1/blob/main/Programacion/Unidad1/Proyecto/esteticaIA.py">Link del programa</a>
-    </article>
-    
-    <article>
-      <h3>Programa para guardar listas de peliculas,series y videojuegos</h3> 
-      <p>Este programa sirve para que los usuarios usuarios puedan,insertar y elegir si quieren añadir películas ,series o videojuegos,tambien pueden listar el contenido de las listas ,y pueden comprobar si el objeto que quieren introducir ya esta en la lista</p>
-      <a href="https://github.com/fpj2003/Ceac-26-27-DAM1/blob/main/Programacion/Unidad3/2-Ejercicio%20Final/8-assert.py">Link del programa</a>
-    </article>
-    
-    <article>
-      <h3>Programa para guardar y listar peliculas y series , mediante el uso de clases</h3>  
-      <p>Este programa sirve para poder añadir partidos de fútbol a un fichero.csv</p>
-      <a href="https://github.com/fpj2003/Ceac-26-27-DAM1/blob/main/Programacion/Unidad5/Ejercicio%20Final/8-grid.py">Link del programa</a>
-    </article>
-    <article>
-      <h3>Programa para guardar partido</h3>  
-      <p>Este programa sirve para poder añadir partidos de fútbol a un fichero.csv</p>
-      <a href="https://github.com/fpj2003/Ceac-26-27-DAM1/blob/main/Programacion/Unidad5/Ejercicio%20Final/8-grid.py">Link del programa</a>
-    </article>
-
-    <p>Aqui os dejares los proyectos que vaya realizando durante el año</p>
-  </main>
-  <footer>
-  <p>2026 Fernando Puig</p> 
-  </footer>
-</body>
+  <head>
+    <title>La web de Fernando</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/estilo.css">
+  </head>
+  <body>
+    <div id="contenedor">
+      <header>
+        <h1>Fernando Puig</h1>
+        <nav>
+          <a href="/">Inicio</a>
+          <a href="/sobremi">Sobre mi</a>
+          <a href="/proyectos">Proyectos</a>
+          <a href="/contacto">Contacto</a>
+        </nav>
+      </header>
+      <main>
+        <h2>Proyectos</h2>
+        {% for proyecto in proyectos %}
+        <article>
+            <h3>{{proyecto.nombre}}</h3>
+            <time>{{proyecto.fecha}}</time>
+            <p>{{proyecto.descripcion}}</p>
+            <a href={{proyecto.enlace}}>Link del programa</a>
+        </article>
+        {% endfor %}
+      </main>
+      <footer>
+         2026 Fernando Puig
+      </footer>
+    </div>
+  </body>
 </html>

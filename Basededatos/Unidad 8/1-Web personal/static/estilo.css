@@ -6,6 +6,8 @@ footer {
 }
 nav a{color:white;background:darkblue;padding:5px;text-decoration:none;width:100px;display:inline-block;text-align:center;}
 form {display: flex;flex-direction: column;gap: 10px;}
+a{color:white;background:grey;padding:10px ;text-decoration:none;width:130px;display:inline-block;text-align:center;}
+
 
 img {width:500px;}
 

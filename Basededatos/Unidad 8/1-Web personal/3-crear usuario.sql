@@ -1,6 +1,6 @@
 sudo mysql -u root -p
 
-CREATE USER 'miweb'@'localhost' IDENTIFIED BY 'CEAC123$';
+CREATE USER 'miweb'@'localhost' IDENTIFIED BY 'Ceac123$';
 
 GRANT USAGE ON *.* TO 'miweb'@'localhost';
 
