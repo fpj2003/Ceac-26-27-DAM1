@@ -1,0 +1,16 @@
+body{background:moccasin;}
+header,main{background:honeydew;padding:10px;margin:auto;width:600px;}
+
+footer {
+  text-align: center;font-size: 15px;  background:honeydew;padding:10px;margin:auto;width:600px;margin-top: 30px;
+}
+nav a{color:white;background:darkblue;padding:5px;text-decoration:none;width:100px;display:inline-block;text-align:center;}
+form {display: flex;flex-direction: column;gap: 10px;}
+a{color:white;background:grey;padding:10px ;text-decoration:none;width:130px;display:inline-block;text-align:center;}
+
+
+img {width:500px;}
+
+
+
+

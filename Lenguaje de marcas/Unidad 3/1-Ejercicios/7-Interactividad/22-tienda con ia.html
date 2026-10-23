@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Tienda de Equipaciones</title>
+  <style>
+    /* --- VARIABLES DE COLOR --- */
+    :root {
+      --primary: #2563eb;      /* Azul deportivo */
+      --primary-hover: #1d4ed8;
+      --bg-color: #f1f5f9;     /* Gris claro para el fondo */
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    /* --- RESET BASICO --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color: var(--text-main);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    /* --- CONTENEDOR DE PRODUCTOS (GRID) --- */
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 3rem;
+    }
+
+    /* --- TARJETAS DE PRODUCTO --- */
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+    }
+
+    /* --- BOTONES --- */
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    /* --- ZONA DEL CARRITO --- */
+    .carrito {
+      background-color: var(--card-bg);
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border-top: 5px solid var(--primary);
+    }
+
+    .carrito h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .info-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 1.1rem;
+    }
+
+    .info-line:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    #detalle {
+      color: var(--text-muted);
+      text-align: right;
+      max-width: 60%;
+    }
+
+    #total {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tienda de Fútbol</h1>
+
+  <!-- Contenedor flex/grid para alinear los productos -->
+  <div class="productos">
+    <div class="card">
+      <img src="primera.jpeg" alt="1ª Equipacion">
+      <button value="85" nombre="1ªEquipacion 26/27">1ª Equipacion - 85€</button>
+    </div>
+
+    <div class="card">
+      <img src="segunda.jpeg" alt="2ª Equipacion">
+      <button value="85" nombre="2ªEquipacion 26/27">2ª Equipacion - 85€</button>
+    </div>
+
+    <div class="card">
+      <img src="tercera.avif" alt="3ª Equipacion">
+      <button value="85" nombre="3ªEquipacion 26/27">3ª Equipacion - 85€</button>
+    </div>
+  </div>
+
+  <!-- Zona de resumen de compra -->
+  <div class="carrito">
+    <h2>Resumen del Carrito</h2>
+    <div class="info-line">
+      <span>Productos añadidos:</span>
+      <span id="detalle">Ninguno</span>
+    </div>
+    <div class="info-line">
+      <span>Total a pagar:</span>
+      <span><span id="total">0</span> €</span>
+    </div>
+  </div>
+
+  <script>
+    // Selecciono el escenario
+    let escenario_total = document.querySelector("#total")
+    let escenario_detalle = document.querySelector("#detalle")
+    // Selecciono todos los botones
+    let botones = document.querySelectorAll("button")
+    // Creo una variable que al principio vale cero
+    let total = 0;
+    // Creo una lista vacia para guardar los productos
+    let lista = []
+    
+    // Selecciono uno a uno
+    botones.forEach(function(boton){
+      // Cuando hago click en cada boton
+      boton.onclick = function(){
+        // A la lista le añado el producto
+        lista.push(boton.getAttribute("nombre"))
+        // al total le sumo lo que vale el boton
+        total += boton.getAttribute("value")*1 // Implicita
+        
+        // Pinto el total en el escenario
+        escenario_total.textContent = total
+        // Pinto la lista uniendo los elementos con una coma y un espacio para que se lea mejor
+        escenario_detalle.textContent = lista.join(", ")
+        
+        // Efecto visual rápido sin usar alert() que interrumpe la navegación
+        let textoOriginal = boton.textContent;
+        boton.textContent = "¡Añadido!";
+        boton.style.backgroundColor = "#10b981"; // Color verde éxito
+        
+        setTimeout(() => {
+          boton.textContent = textoOriginal;
+          boton.style.backgroundColor = "";
+        }, 1000);
+      }
+    })
+  </script>
+</body>
+</html>

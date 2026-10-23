@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>La web de Fernando</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/estilo.css">
+  </head>
+  <body>
+    <div id="contenedor">
+      <header>
+        <h1>Fernando Puig</h1>
+        <nav>
+          <a href="/">Inicio</a>
+          <a href="/sobremi">Sobre mi</a>
+          <a href="/proyectos">Proyectos</a>
+          <a href="/contacto">Contacto</a>
+        </nav>
+      </header>
+      <main>
+        <h2>Proyectos</h2>
+        {% for proyecto in proyectos %}
+        <article>
+            <h3>{{proyecto.nombre}}</h3>
+            <time>{{proyecto.fecha}}</time>
+            <p>{{proyecto.descripcion}}</p>
+            <a href={{proyecto.enlace}}>Link del programa</a>
+        </article>
+        {% endfor %}
+      </main>
+      <footer>
+         2026 Fernando Puig
+      </footer>
+    </div>
+  </body>
+</html>
