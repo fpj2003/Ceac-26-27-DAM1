@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Blog de Fernando Puig</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/estilo_frente.css">
+  </head>
+  <body>
+    <header>
+      <h1>Fernando Puig</h1>
+      <h2>Blog personal</h2>
+        <div id="izquierda">
+  		<a href="/formulario">Formulario</a>
+ 		<a href="/tabla">Tabla</a>
+	</div>
+    </header>
+    <main>
+      {% for articulo in articulos %}
+      <article>
+        <h3>{{articulo.titulo}}</h3>
+        <time>{{articulo.fecha}}</time>
+        <p>{{articulo.contenido}}</p>
+      </article>
+			{% endfor %}
+    </main>
+
+      
+    <footer>
+      (c) 2026 Fernando Puig
+    </footer>
+  </body>
+</html>

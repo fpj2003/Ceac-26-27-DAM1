@@ -1,52 +1,54 @@
-from flask import Flask,render_template,request
+from flask import Flask, render_template, request
 import mysql.connector
 
-aplicacion = Flask("__name__") 
+aplicacion = Flask(__name__)
 
 connection = mysql.connector.connect(
-  host='localhost',
-  user='miweb',
-  password='Ceac123$',
-  database='miweb'
+    host='localhost',
+    user='miweb',
+    password='Ceac123$',
+    database='miweb'
 )
 
-cursor = connection.cursor(dictionary = True)
+cursor = connection.cursor(dictionary=True)
 
 @aplicacion.route("/")
 def inicio():
-  return render_template("inicio.html")
+    return render_template("inicio.html")
 
 @aplicacion.route("/sobremi")
 def sobremi():
-  return render_template("sobremi.html")
+    return render_template("sobremi.html")
 
 @aplicacion.route("/proyectos")
 def proyectos():
-  print("Hola")
-  cursor.execute("SELECT * FROM proyectos") # Saco los proyectos de la base de datos
-  proyectos = cursor.fetchall()		# Los meto en una variable
-  print(proyectos)
-  return render_template("proyectos.html",proyectos=proyectos) # Y se los paso a la plantilla
+    print("Hola")
+    cursor.execute("SELECT * FROM proyectos") # Saco los proyectos de la base de datos
+    proyectos = cursor.fetchall()             # Los meto en una variable
+    print(proyectos)
+    return render_template("proyectos.html", proyectos=proyectos) # Y se los paso a la plantilla
 
 @aplicacion.route("/contacto")
 def contacto():
-  return render_template("contacto.html")
+    return render_template("contacto.html")
 
-@aplicacion.route("/recibedatos",methods=['POST'])
+@aplicacion.route("/recibedatos", methods=['POST'])
 def recibedatos():
-  cursor.execute("""   
-  	INSERT INTO contacto VALUES(
-    	NULL,
-      '"""+request.form['nombre']+"""',
-      '"""+request.form['correo']+"""',
-      '"""+request.form['mensaje']+"""'
-    );
+    # Código tabulado. Nota: en producción, es mejor usar consultas parametrizadas (%s) 
+    # para evitar ataques de inyección SQL.
+    cursor.execute("""   
+        INSERT INTO contacto VALUES(
+            NULL,
+            '""" + request.form['nombre'] + """',
+            '""" + request.form['correo'] + """',
+            '""" + request.form['mensaje'] + """'
+        );
     """)
-  connection.commit()
-  return render_template("confirmacion.html")
+    connection.commit()
+    return render_template("confirmacion.html")
 
 if __name__ == "__main__":
-  aplicacion.run()
-  
+    aplicacion.run()
+    
 cursor.close()
 connection.close()
