@@ -1,0 +1,140 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Contenedores principales */
+header, main, footer {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos del Header */
+header {
+    text-align: center;
+    border-top: 5px solid #2874a6;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    color: #1b4f72;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #666;
+}
+
+/* Estilos de los productos (los <article>) */
+article {
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+article h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #2874a6;
+}
+
+article p {
+    margin: 5px 0 15px 0;
+    line-height: 1.5;
+}
+
+/* NUEVO: Estilos para el botón de compra */
+article button {
+    background-color: #27ae60; /* Verde para invitar a la compra */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+article button:hover {
+    background-color: #219150; /* Un verde un poco más oscuro al pasar el ratón */
+}
+
+/* NUEVO: El Ticket de compra (Aside) */
+aside {
+    width: 220px; /* Un poco más ancho para que quepan bien los nombres */
+    max-height: 300px; /* Usamos max-height para que crezca hasta 300px y luego ponga scroll */
+    background: white;
+    padding: 20px;
+    position: fixed;
+    bottom: 20px; /* Un poco más separado del borde */
+    right: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra suavizada en lugar de black puro */
+    border-radius: 8px; /* Esquinas redondeadas a juego */
+    border-top: 5px solid #27ae60; /* Toque verde arriba */
+    overflow-y: auto; /* IMPORTANTE: Si metes muchos productos, añade una barra de desplazamiento */
+}
+
+/* Estilos para los productos dentro del ticket */
+aside p {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed #ccc; /* Una línea de puntos separando los artículos */
+    padding-bottom: 8px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    padding: 20px;
+    margin-bottom: 60px; /* Margen extra para que el ticket no tape el footer */
+}
+
+
+/* Botón final de compra en el ticket (aside) */
+#comprar {
+    background-color: #27ae60; /* Mismo verde que los otros botones */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%; /* Hace que el botón ocupe todo el ancho del aside */
+    margin-top: 15px; /* Lo separa de la suma total */
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+}
+
+#comprar:hover {
+    background-color: #219150; /* Mismo verde oscuro al pasar el ratón */
+}
+
+/* Un pequeño efecto extra: al hacer clic, el botón se hunde un poquito */
+#comprar:active {
+    transform: scale(0.96);
+}

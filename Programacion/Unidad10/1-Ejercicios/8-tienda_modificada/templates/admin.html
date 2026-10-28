@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="/static/estilo.css">
+</head>
+<body>
+    <div class="admin-container">
+        <br>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" class="nav-link">← Volver a la Tienda</a>
+            <a href="/logout" class="nav-link" style="color: #EF4444;">Cerrar Sesión</a>
+        </div>
+        
+        <header style="padding: 20px; margin-bottom: 20px;">
+            <h1>Panel de Pedidos</h1>
+            <h2>Gestión de compras realizadas</h2>
+        </header>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Artículos</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in pedidos %}
+                <tr>
+                    <td>#{{ p.id }}</td>
+                    <td style="font-size: 0.85em; color: var(--text-light);">{{ p.fecha.split('.')[0] }}</td>
+                    <td>
+                        <strong>{{ p.nombre }} {{ p.apellidos }}</strong><br>
+                        <span style="font-size: 0.85em; color: var(--text-light);">{{ p.correo }}</span>
+                    </td>
+                    <td>
+                        <ul class="order-items">
+                            {% set total = namespace(value=0) %}
+                            {% for item in p.carga %}
+                                <li>{{ item.nombre }} ({{ item.precio }}€)</li>
+                                {% set total.value = total.value + item.precio|float %}
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td><strong>{{ "%.2f"|format(total.value) }} €</strong></td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" style="text-align:center; padding: 30px;">No hay pedidos todavía.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

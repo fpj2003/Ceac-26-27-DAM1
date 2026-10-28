@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Login de Administración</title>
+    <link rel="stylesheet" href="/static/estilo.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 style="color: var(--primary); margin-bottom: 20px;">Acceso Admin</h2>
+        {% if error %}
+        <p style="color: #EF4444; margin-bottom: 15px; font-weight: bold;">{{ error }}</p>
+        {% endif %}
+        <form method="POST" action="/login">
+            <input type="password" name="password" placeholder="Introduce la contraseña" required class="input-form" style="padding: 12px; font-size: 1rem; text-align: center;">
+            <button type="submit" id="comprar" style="margin-top: 15px;">Entrar al Panel</button>
+        </form>
+        <br><br>
+        <a href="/" class="nav-link" style="font-size: 0.9rem;">← Volver a la tienda</a>
+    </div>
+</body>
+</html>

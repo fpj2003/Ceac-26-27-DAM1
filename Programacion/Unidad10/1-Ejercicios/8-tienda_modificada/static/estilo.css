@@ -1,0 +1,282 @@
+/* =========================================
+   ESTILO INDIE / NEO-BRUTALISTA (No-AI look)
+   ========================================= */
+
+:root {
+    --primary: #FF3366;      /* Rosa vibrante */
+    --primary-hover: #E60039;
+    --accent: #FFCC00;       /* Amarillo chillón */
+    --bg: #F4F0EA;           /* Tono hueso/papel */
+    --card-bg: #FFFFFF;
+    --text: #0F0F0F;
+    --border-hard: #0F0F0F;  /* Negro absoluto para los bordes */
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    /* Tipografía más atrevida y tosca */
+    font-family: 'Helvetica Neue', 'Arial Black', sans-serif;
+    background-color: var(--bg);
+    /* Un patrón de puntitos de fondo tipo cómic/papel viejo */
+    background-image: radial-gradient(#D1CDDB 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text);
+    padding: 20px;
+}
+
+/* Cabecera con rotación y sombra sólida */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--accent);
+    border: 3px solid var(--border-hard);
+    border-radius: 0; /* Sin bordes redondeados suaves */
+    margin-bottom: 40px;
+    box-shadow: 6px 6px 0px var(--border-hard);
+    transform: rotate(-1deg); /* Ligera inclinación para darle rollo manual */
+}
+
+h1 { 
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 5px; 
+}
+
+h2 { 
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.1rem; 
+}
+
+main { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjetas de producto estilo bloque */
+article {
+    background: var(--card-bg);
+    border: 3px solid var(--border-hard);
+    padding: 20px;
+    box-shadow: 6px 6px 0px var(--border-hard);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.15s ease;
+}
+
+/* Efecto al pasar el ratón: se aplasta la sombra */
+article:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px var(--border-hard);
+}
+
+.emoji-avatar {
+    font-size: 5rem;
+    text-align: center;
+    background: #E8E4DF;
+    border: 2px solid var(--border-hard);
+    padding: 20px 0;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+article h4 { 
+    font-size: 1.3rem; 
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 8px; 
+}
+
+article p { 
+    font-family: monospace;
+    font-size: 0.95rem; 
+    flex-grow: 1; 
+    margin-bottom: 15px; 
+}
+
+/* Botones toscos y llamativos */
+article button {
+    background-color: var(--primary);
+    color: white;
+    border: 3px solid var(--border-hard);
+    padding: 12px;
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px var(--border-hard);
+    transition: all 0.1s;
+}
+
+article button:hover { 
+    background-color: var(--primary-hover); 
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--border-hard);
+}
+
+/* El carrito tipo "ticket de compra" retro */
+aside {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: #FFF9E6; /* Color de ticket antiguo */
+    border: 3px solid var(--border-hard);
+    padding: 20px;
+    box-shadow: 8px 8px 0px var(--border-hard);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+aside h3 { 
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15px; 
+    padding-bottom: 10px; 
+    border-bottom: 3px dashed var(--border-hard); 
+}
+
+.ticket-items { 
+    overflow-y: auto; 
+    flex-grow: 1; 
+    margin-bottom: 15px; 
+    font-family: monospace; /* Letra de ticket real */
+}
+
+.ticket-item { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 1rem; 
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.total { 
+    font-weight: 900; 
+    font-size: 1.3rem; 
+    text-align: right; 
+    margin-bottom: 15px; 
+    border-top: 3px dashed var(--border-hard);
+    padding-top: 10px;
+}
+
+/* Formularios cuadrados y crudos */
+.input-form {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 3px solid var(--border-hard);
+    background: white;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.input-form:focus {
+    outline: none;
+    background: #E6F0FF;
+}
+
+#comprar {
+    width: 100%;
+    background-color: #00E676;
+    color: var(--text);
+    border: 3px solid var(--border-hard);
+    padding: 15px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--border-hard);
+    transition: all 0.1s;
+}
+
+#comprar:hover { 
+    background-color: #00C853; 
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-hard);
+}
+
+/* =========================================
+   PANEL DE ADMINISTRACIÓN Y LOGIN
+   ========================================= */
+.admin-container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.login-container { 
+    max-width: 400px; 
+    margin: 100px auto; 
+    background: var(--accent); 
+    padding: 40px; 
+    border: 3px solid var(--border-hard);
+    box-shadow: 8px 8px 0px var(--border-hard);
+    text-align: center; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: white; 
+    border: 3px solid var(--border-hard);
+    box-shadow: 6px 6px 0px var(--border-hard);
+}
+
+th, td { 
+    padding: 15px; 
+    text-align: left; 
+    border-bottom: 3px solid var(--border-hard); 
+}
+
+th { 
+    background-color: var(--primary); 
+    color: white; 
+    font-weight: 900;
+    text-transform: uppercase;
+    border-right: 3px solid var(--border-hard);
+}
+
+td {
+    border-right: 3px solid var(--border-hard);
+}
+
+.order-items { 
+    list-style: none; 
+    padding-left: 0; 
+    margin: 0;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.nav-link { 
+    display: inline-block; 
+    margin-bottom: 20px; 
+    color: var(--text); 
+    text-decoration: none; 
+    font-weight: 900; 
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--text);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+

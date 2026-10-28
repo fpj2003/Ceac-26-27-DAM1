@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Tienda Deportiva Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda Deportiva Pro</h1>
+        <h2>Equípate con lo mejor</h2>
+        <a href="/admin" style="display:inline-block; margin-top:10px; color:var(--primary);">Ver Panel de Administración →</a>
+    </header>
+    <main>
+        <section class="grid-productos"></section>
+    </main>
+    <aside>
+        <h3>Tu Carrito</h3>
+        <div class="ticket-items"></div>
+        <div class="total">Total: 0.00 €</div>
+        
+        <div id="form-cliente" style="display:none;">
+            <input type="text" id="c-nombre" placeholder="Nombre" required class="input-form">
+            <input type="text" id="c-apellidos" placeholder="Apellidos" required class="input-form">
+            <input type="email" id="c-correo" placeholder="Correo electrónico" required class="input-form">
+        </div>
+        
+        <button id="comprar" style="display:none;">Finalizar Compra</button>
+    </aside>
+
+    <script>
+        let pedido = [];
+        let ticketItems = document.querySelector(".ticket-items");
+        let totalDiv = document.querySelector(".total");
+        let btnComprar = document.querySelector("#comprar");
+        let seccion = document.querySelector(".grid-productos");
+        let formCliente = document.getElementById("form-cliente");
+
+        fetch("/datos")
+            .then(res => res.json())
+            .then(datos => {
+                datos.forEach(producto => {
+                    seccion.innerHTML += `
+                        <article>
+                            <div class="emoji-avatar">${producto.imagen || '📦'}</div>
+                            <h4>${producto.nombre}</h4>
+                            <p>${producto.descripcion}</p>
+                            <button data-precio="${producto.precio}" data-nombre="${producto.nombre}">
+                                Añadir por ${producto.precio}€
+                            </button>
+                        </article>
+                    `;
+                });
+
+                document.querySelectorAll("article button").forEach(boton => {
+                    boton.addEventListener("click", () => {
+                        let nombre = boton.getAttribute("data-nombre");
+                        let precio = parseFloat(boton.getAttribute("data-precio"));
+                        pedido.push({ nombre, precio });
+                        actualizarCarrito();
+                    });
+                });
+            });
+
+        function actualizarCarrito() {
+            ticketItems.innerHTML = "";
+            let suma = 0;
+            pedido.forEach(item => {
+                ticketItems.innerHTML += `<div class="ticket-item"><span>${item.nombre}</span><span>${item.precio} €</span></div>`;
+                suma += item.precio;
+            });
+            totalDiv.innerHTML = `Total: ${suma.toFixed(2)} €`;
+            
+            if (pedido.length > 0) {
+                btnComprar.style.display = "block";
+                formCliente.style.display = "block";
+            } else {
+                btnComprar.style.display = "none";
+                formCliente.style.display = "none";
+            }
+        }
+
+        btnComprar.addEventListener("click", () => {
+            if (pedido.length === 0) return;
+            
+            let clienteInfo = {
+                nombre: document.getElementById('c-nombre').value,
+                apellidos: document.getElementById('c-apellidos').value,
+                correo: document.getElementById('c-correo').value
+            };
+            
+            if (!clienteInfo.nombre || !clienteInfo.apellidos || !clienteInfo.correo) {
+                alert("Por favor, rellena tu nombre, apellidos y correo para finalizar el pedido.");
+                return;
+            }
+            
+            btnComprar.innerText = "Procesando...";
+            
+            fetch("/insertapedido", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    cliente: clienteInfo,
+                    pedido: pedido
+                })
+            }).then(() => {
+                alert("¡Compra realizada con éxito!");
+                pedido = [];
+                document.getElementById('c-nombre').value = '';
+                document.getElementById('c-apellidos').value = '';
+                document.getElementById('c-correo').value = '';
+                actualizarCarrito();
+                btnComprar.innerText = "Finalizar Compra";
+            });
+        });
+    </script>
+</body>
+</html>
