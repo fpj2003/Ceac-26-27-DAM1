@@ -1,0 +1,15 @@
+{
+	"datos_personales":{
+	"nombre":"Fernando",
+	"apellidos":"Puig Jorda",
+	"correo":"fpj2003@gmail.com"
+},
+
+	"experiencia":{
+  	"empresa":"CEAC",
+	"cargo":"Profesor",
+	"inicio":"2025-08",
+	"final":"actualmente"
+}
+
+}

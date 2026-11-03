@@ -1,0 +1,70 @@
+{
+  "datos_personales": {
+    "nombre": "Fernando",
+    "apellidos": "Puig",
+    "correo": "fpj2003@gmail.com",
+    "telefono": "601737039"
+  },
+  "habilidades": {
+    "lenguajes_de_programacion": [
+      "C++",
+      "Java",
+      "Python",
+      "Html",
+      "SQL"
+    ]
+  },
+  "idiomas": [
+    {
+      "idioma": "Español",
+      "nivel": "Nativo"
+    },
+    {
+      "idioma": "Ingles",
+      "nivel": "B2"
+    }
+  ],
+  "formacion": [
+    {
+      "titulacion": "Desarrollo de Aplicaciones Multiplataforma(DAM)",
+      "institucion": "CEAC",
+      "inicio_formacion": "2026-09",
+      "final_formacion": "actualmente"
+    },
+    {
+      "titulacion": "Ingenieria telemática(sin finalizar)",
+      "institucion": "Universitat de València",
+      "inicio_formacion": "2021-09",
+      "final_formacion": "2026-06"
+    },
+    {
+      "titulacion": "Titulo de Monitor de Actividad de Tiempo libre(MAT)",
+      "institucion": "Juniors Escola d'Animadors",
+      "inicio_formacion": "2022-02",
+      "final_formacion": "2025-01"
+    },
+    {
+      "titulacion": "Bachillerato Itinerario Biosanitario",
+      "institucion": "Colegio el Armelar",
+      "inicio_formacion": "2019-09",
+      "final_formacion": "2021-06"
+    },
+    {
+      "titulacion": "ESO",
+      "institucion": "Colegio el Armelar",
+      "inicio_formacion": "2015-09",
+      "final_formacion": "2019-06"
+    }
+  ],
+  "experiencia": [
+    {
+      "empresa": "Juniors MD",
+      "cargo": "Voluntario como Monitor",
+      "inicio": "2021-09",
+      "final": "actualmente",
+      "descripcion":[ "Planificación, diseño y ejecución de actividades lúdicas y educativas para grupos de niños y adolescentes.",
+ 			"Trabajo en equipo y coordinación con otros monitores para la organización de eventos, excursiones y campamentos."
+      			]
+    }
+  ]
+}

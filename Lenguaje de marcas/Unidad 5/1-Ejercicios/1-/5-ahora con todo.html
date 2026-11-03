@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Curriculum</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background: grey;
+      }
+      main {
+        width: 210mm;
+        height: 297mm;
+        background: beige;
+        margin: auto;
+        display: flex;
+      }
+      #izquierda {
+        flex: 1;
+        background: chocolate ;
+        color: white;
+      }
+      #derecha {
+        flex: 3;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="izquierda">
+        <img src="prog.png">
+        
+        <section id="Datos_de_contacto">
+          <h3>Datos de contacto</h3>
+          <ul id="lista_contacto"></ul>
+        </section>
+        
+        <section id="Habilidades">
+          <h3>Habilidades</h3>
+          <p>Lenguajes de programación</p>
+          <ul id="lista_lenguajes"></ul>
+        </section>
+
+        <section id="Idiomas">
+          <h3>Idiomas</h3>
+          <ul id="lista_idiomas"></ul>
+        </section>
+      </div>
+      
+      <div id="derecha">
+        <h1 id="nombre_completo"></h1>
+        <h2 id="titulo_perfil"></h2>
+        <p id="descripcion_perfil"></p>
+        
+        <section id="formacion">
+          <h3>Formacion</h3>
+        </section>
+        
+        <section id="experiencia">
+          <h3>Experiencia profesional</h3>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      // Cojo los elementos HTML de la izquierda
+      let lista_contacto = document.querySelector("#lista_contacto")
+      let lista_lenguajes = document.querySelector("#lista_lenguajes")
+      let lista_idiomas = document.querySelector("#lista_idiomas")
+
+      // Cojo los elementos HTML de la derecha
+      let nombre_completo = document.querySelector("#nombre_completo")
+      let titulo_perfil = document.querySelector("#titulo_perfil")
+      let descripcion_perfil = document.querySelector("#descripcion_perfil")
+      let seccion_formacion = document.querySelector("#formacion")
+      let seccion_experiencia = document.querySelector("#experiencia")
+
+      // Vete y traeme el archivo json
+      fetch("curriculum.json")
+      .then(function(resultado){return resultado.json()}) // Lo que viene, viene como json
+      .then(function(datos){
+        // Antes que nada, pintame los datos en la consola
+        console.log(datos)
+
+        // En los elementos pongo los datos personales
+        nombre_completo.textContent = datos.datos_personales.nombre + " " + datos.datos_personales.apellidos
+        
+        // Compruebo si el perfil existe en el JSON antes de ponerlo
+        if (datos.perfil) {
+          titulo_perfil.textContent = datos.perfil.titulo
+          descripcion_perfil.textContent = datos.perfil.descripcion
+        }
+
+        // Relleno los datos de contacto
+        let li_correo = document.createElement("li")
+        li_correo.textContent = datos.datos_personales.correo
+        lista_contacto.appendChild(li_correo)
+
+        let li_telefono = document.createElement("li")
+        li_telefono.textContent = datos.datos_personales.telefono
+        lista_contacto.appendChild(li_telefono)
+
+        // Relleno las habilidades (bucle)
+        datos.habilidades.lenguajes_de_programacion.forEach(function(lenguaje) {
+          let li = document.createElement("li")
+          li.textContent = lenguaje
+          lista_lenguajes.appendChild(li)
+        })
+
+        // Relleno los idiomas (bucle)
+        datos.idiomas.forEach(function(idiomaObj) {
+          let li = document.createElement("li")
+          li.textContent = idiomaObj.idioma + " " + idiomaObj.nivel
+          lista_idiomas.appendChild(li)
+        })
+
+        // Relleno la formación creando las etiquetas article
+        datos.formacion.forEach(function(estudio) {
+          let article = document.createElement("article")
+          let h4 = document.createElement("h4")
+          let p_institucion = document.createElement("p")
+          let p_fechas = document.createElement("p")
+
+          h4.textContent = estudio.titulacion
+          p_institucion.textContent = estudio.institucion
+          p_fechas.textContent = estudio.inicio_formacion + " - " + estudio.final_formacion
+
+          article.appendChild(h4)
+          article.appendChild(p_institucion)
+          article.appendChild(p_fechas)
+          
+          seccion_formacion.appendChild(article)
+        })
+
+        // Relleno la experiencia creando las etiquetas article
+        datos.experiencia.forEach(function(trabajo) {
+          let article = document.createElement("article")
+          let h4 = document.createElement("h4")
+          let p_fechas = document.createElement("p")
+
+          h4.textContent = trabajo.cargo + " en " + trabajo.empresa
+          p_fechas.textContent = trabajo.inicio + " - " + trabajo.final
+
+          article.appendChild(h4)
+          article.appendChild(p_fechas)
+
+          // Bucle para las tareas de la experiencia
+          trabajo.descripcion.forEach(function(tarea) {
+              let p_tarea = document.createElement("p")
+              p_tarea.textContent = tarea
+              article.appendChild(p_tarea)
+          })
+
+          seccion_experiencia.appendChild(article)
+        })
+      })
+    </script>
+  </body>
+</html>

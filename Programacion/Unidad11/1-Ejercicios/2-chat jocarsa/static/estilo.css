@@ -1,0 +1,124 @@
+/* Reset y base holográfica oscura */
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #02060f;
+    background-image: radial-gradient(circle at center, #0a1931 0%, #02050a 100%);
+    color: #88d4ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedores principales */
+input, p, form {
+    width: 400px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título de bienvenida */
+h1 {
+    color: #00d2ff;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Respuesta de la IA */
+p {
+    background: rgba(0, 40, 80, 0.3);
+    color: #e0f7fa;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 13px;
+    border: 1px solid #00d2ff;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15) inset, 0 0 10px rgba(0, 210, 255, 0.2);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* Campos de entrada (Input text) */
+input[type="text"] {
+    padding: 15px;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: rgba(0, 20, 40, 0.5);
+    border: 1px solid #007bb5;
+    color: #00d2ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
+    background-color: rgba(0, 40, 80, 0.6);
+}
+
+/* Botón de envío (Submit) */
+input[type="submit"] {
+    padding: 15px;
+    background-color: transparent;
+    color: #00d2ff;
+    border: 1px solid #00d2ff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="submit"]:hover {
+    background-color: rgba(0, 210, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+    color: #ffffff;
+}
+
+/* Definimos la animación de "procesamiento/pensamiento" sin filtros de color */
+@keyframes jarvisThinking {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        /* Aumenta el resplandor y el tamaño a la mitad de la animación */
+        box-shadow: 0 0 40px rgba(0, 210, 255, 0.9), 0 0 80px rgba(0, 210, 255, 0.4);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        transform: scale(1);
+    }
+}
+
+/* Imagen con el latido holográfico aplicado */
+img {
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #00d2ff;
+    margin-bottom: 20px;
+    /* Llama a la animación, dura 3 segundos, tiene transiciones suaves y se repite en bucle */
+    animation: jarvisThinking 3s ease-in-out infinite;
+}
+ 
+}

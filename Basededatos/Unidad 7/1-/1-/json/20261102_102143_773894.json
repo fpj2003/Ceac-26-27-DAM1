@@ -1,0 +1,17 @@
+{
+  "fecha": "2026-01-01",
+  "cliente": {
+    "nombre": "Fernando",
+    "apellidos": "Puig"
+  },
+  "productos": [
+    {
+      "nombre": "Producto1",
+      "precio": 34
+    },
+    {
+      "nombre": "Producto2",
+      "precio": 45
+    }
+  ]
+}
