@@ -1,6 +1,6 @@
 print("Programa para añadir peliculas o series en JSON ")
 peliculas=[]
-series[]
+series=[]
 while True:
 	print("Bienvenido escoge un opcion")	
 	print("1-Insertar")
@@ -12,7 +12,15 @@ while True:
 		print("2-Insertar serie")
 		opcion_insertar=input("Escoge una opcion")
 		if opcion_insertar=="1"
-		
-		elif opcion_insertar=="2"		
-	
+			nombre=input("Introduce el nombre de la pelicula:")
+			director=input("Introduce el director de la pelicula:")
+			anyo=input("Introduce el año de estreno:")
+			peliculas.append({"nombre":nombre,"director":director,"año":anyo})
+		elif opcion_insertar=="2"
+			nombre=input("Introduce el nombre de la pelicula:")
+			director=input("Introduce el director de la pelicula:")
+			anyo=input("Introduce el año de estreno:")
+			series.append({"nombre":nombre,"director":director,"año":anyo})		
+
 	elif opcion == "2"
+		print(pelc)

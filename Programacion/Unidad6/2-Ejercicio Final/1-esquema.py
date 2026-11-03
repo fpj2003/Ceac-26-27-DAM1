@@ -1,6 +1,6 @@
 print("Programa para añadir peliculas o series en JSON ")
 peliculas=[]
-series[]
+series=[]
 while True:
 	print("Bienvenido escoge un opcion")	
 	print("1-Insertar")

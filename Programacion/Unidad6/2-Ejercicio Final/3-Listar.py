@@ -1,0 +1,51 @@
+import json
+
+print("Programa para añadir peliculas o series en JSON ")
+peliculas=[]
+series=[]
+while True:
+	print("Bienvenido escoge un opcion")	
+	print("1-Insertar")
+	print("2-Listar")
+	opcion=input("Inserta tu opcion")
+	if opcion == "1":
+		print("¿Que quieres insertar?")
+		print("1-Insertar pelicula")
+		print("2-Insertar serie")
+		opcion_insertar=input("Escoge una opcion")
+		if opcion_insertar=="1":
+			nombre=input("Introduce el nombre de la pelicula:")
+			director=input("Introduce el director de la pelicula:")
+			anyo=input("Introduce el año de estreno:")
+			peliculas.append({"nombre":nombre,"director":director,"año":anyo})
+			archivo = open("peliculas.json",'w')
+			json.dump(peliculas,archivo)
+			archivo.close()
+		elif opcion_insertar=="2":
+			nombre=input("Introduce el nombre de la serie:")
+			director=input("Introduce el director de la serie:")
+			anyo=input("Introduce el año de estreno:")
+			series.append({"nombre":nombre,"director":director,"anyo":anyo})	
+			archivo = open("series.json",'w')
+			json.dump(series,archivo)
+			archivo.close()	
+
+	elif opcion == "2":
+		print("¿Que quieres listar?")
+		print("1-Listar peliculas")
+		print("2-Listar series")
+		print("3-Listar ambas")
+		opcion_listar=input("Escoge una opcion")
+		if opcion_listar=="1":	
+			archivo = open("peliculas.json",'r')
+			json.dump(peliculas,archivo)
+			archivo.close()
+		elif opcion_listar=="2":
+			print(series)
+		elif opcion_listar=="3":	
+			print(peliculas)
+			print(series)
+			
+			
+			
+
