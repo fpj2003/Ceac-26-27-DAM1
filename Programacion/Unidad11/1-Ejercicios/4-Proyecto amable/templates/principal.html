@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: #f7f9fa; /* Un fondo muy suave para que resalte el formulario */
+        color: #333;
+      }
+      
+      form {
+        text-align: center;
+        background: white; /* Contenedor blanco tipo tarjeta */
+        padding: 40px 60px;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra elegante */
+      }
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: 24px;
+        font-weight: 600;
+        color: #2c3e50;
+      }
+
+      input {
+        width: 280px; /* Un poco más de espacio para escribir */
+        padding: 14px 20px;
+        font-size: 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 40px;
+        outline: none;
+        /* Reduje el tiempo de 1s a 0.3s porque 1 segundo se siente con mucho "lag" al hacer clic */
+        transition: all 0.3s ease; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      }
+
+      input:focus {
+        background: rgb(235, 255, 235); /* Un verde un poco más pastel y agradable */
+        border-color: #86efac; /* El borde también cambia a verde */
+        box-shadow: 0 4px 12px rgba(134, 239, 172, 0.25); /* Ligero resplandor verde */
+        transform: translateY(-1px); /* Da la sensación de que el input se eleva un poco al teclear */
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/procesa" method="POST">
+      <h1>Amable</h1>
+      <input type="text" name="peticion" placeholder="Dime lo que quieres..." autocomplete="off">
+    </form>
+  </body>
+</html>
