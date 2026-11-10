@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados para "{{ busca }}"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .search-box {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        .search-box input[type="text"] {
+            flex-grow: 1;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            outline: none;
+        }
+        .search-box input[type="text"]:focus {
+            box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            border-color: rgba(223,225,229,0);
+        }
+        .search-box input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+        }
+        .search-box input[type="submit"]:hover {
+            background-color: #357ae8;
+        }
+        .stats {
+            color: #70757a;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-bottom: 25px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .result-url {
+            color: #202124;
+            font-size: 14px;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .result-title {
+            font-size: 20px;
+            color: #1a0dab;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .result-title:hover {
+            text-decoration: underline;
+        }
+        .result-desc {
+            font-size: 14px;
+            color: #4d5156;
+            line-height: 1.5;
+        }
+        .result-ai {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f4f8fb;
+            border-left: 4px solid #4285f4;
+            font-size: 14px;
+            color: #202124;
+            border-radius: 0 4px 4px 0;
+        }
+        .no-results {
+            font-size: 18px;
+            color: #202124;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra de búsqueda superior -->
+        <form class="search-box" action="/buscar" method="POST">
+            <input type="text" name="busca" value="{{ busca }}" placeholder="Buscar..." required>
+            <input type="submit" value="Buscar">
+        </form>
+
+        {% if resultados %}
+            <div class="stats">Se encontraron {{ resultados|length }} resultados para "{{ busca }}"</div>
+            
+            <!-- Lista de resultados -->
+            {% for resultado in resultados %}
+                <div class="result">
+                    <div class="result-url">{{ resultado.url }}</div>
+                    <a class="result-title" href="{{ resultado.url }}" target="_blank">
+                        {{ resultado.titulo or 'Sin título' }}
+                    </a>
+                    <div class="result-desc">
+                        {{ resultado.descripcion or 'No hay descripción disponible para este sitio web.' }}
+                    </div>
+                    
+                    <!-- Muestra la descripción IA solo si existe -->
+                    {% if resultado.descripcionia %}
+                        <div class="result-ai">
+                            <strong>✨ Resumen IA:</strong> {{ resultado.descripcionia }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <!-- Mensaje cuando no hay resultados -->
+            <div class="no-results">
+                <p>No se han encontrado resultados para tu búsqueda: <strong>{{ busca }}</strong>.</p>
+                <p>Sugerencias:</p>
+                <ul>
+                    <li>Asegúrate de que todas las palabras estén escritas correctamente.</li>
+                    <li>Prueba con palabras clave diferentes.</li>
+                    <li>Prueba con palabras clave más generales.</li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
