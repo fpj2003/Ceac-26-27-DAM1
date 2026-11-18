@@ -30,7 +30,7 @@ def procesa():
     pregunta_usuario = request.json.get('peticion', '')
     
     ruta = "http://localhost:11434/api/generate"
-    modelo = "qwen2.5-coder:3b"
+    modelo = "qwen2.5-coder:1.5b"
     
     sistema = """
         -Crea sitios web completos y funcionales

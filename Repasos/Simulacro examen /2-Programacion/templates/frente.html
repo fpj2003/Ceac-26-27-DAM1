@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Simulacro examen</title>
+    <meta charset="utf-8">
+    
+  </head>
+  <body>
+    <a href="/formulario">Formulario</a>	
+    <main>
+      {% for medicos in medicos %}
+      <article>
+        <p>{{medicos.nombre}}</p>
+        <p>{{medicos.apellidos}}<p>
+        <p>{{medicos.email}}</p>
+      	<p>{{medicos.especialidad}}</p>
+        <p>{{medicos.numero_de_colegiado}}<p>
+        <p>{{medicos.activo}}</p>
+      </article>
+			{% endfor %}
+    </main>
+
+      
+    <footer>
+      (c) 2026 Fernando Puig
+    </footer>
+  </body>
+</html>

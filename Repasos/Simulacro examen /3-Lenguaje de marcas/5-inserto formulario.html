@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Formulario</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+     
+    <header>
+      <h1>Insertar médico</h1>
+    </header>
+      <main>
+      <h2>Introduzca los datos del médico</h2>
+	<form action="/inserta" method="POST">
+        <label for="nombre">Nombre del medico</label>
+        <input type="text" name="nombre" id="nombre">
+        
+        <label for="apellidos">Apellidos del medico</label>
+        <input type="text" name="apellidos" id="apellidos">
+        
+        <label for="email">Email del medico</label>
+        <input type="text" name="email" id="email">
+        
+        <label for="especialidad">Especialidad del medico</label>
+        <input type="text" name="especialidad" id="especialidad">
+        
+        <label for="numero_de_colegiado">Numero de colegiado</label>
+        <input type="text" name="numero_de_colegiado" id="numero_de_colegiado">
+
+        <label for="activo">Estado</label>
+        <select id="activo" name="activo">
+    		<option value="1" selected>1-Activo</option>
+    		<option value="0">0-No activo</option>
+  	</select>
+        <input type="submit">
+      
+       </form>
+     </main>
+   <footer>
+      (c) 2026 Fernando Puig
+    </footer> 
+  </body>
+</html>

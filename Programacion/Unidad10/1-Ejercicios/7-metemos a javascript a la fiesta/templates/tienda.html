@@ -61,7 +61,7 @@
             })
             ticket.innerHTML += suma+" €"
             // Pongo un boton para enviar la compra al servidor
-            ticket.innerHTML += "<button id='comprar'>Comprar!!!!!</button>"
+            ticket.innerHTML += "<button id='comprar'>Comprar</button>"
             // Selecciono el boton
             let botoncompra = document.querySelector("#comprar")
             // Ahora escucho si alguien pulsa ese boton
@@ -76,6 +76,10 @@
                 }, // Aviso de que envío JSON
                 body: JSON.stringify(pedido)	// Y envío el pedido
               })
+            	.then(function() {
+                // Redirige directamente en cuanto se envía el pedido
+                window.location.href = "/aceptada";
+              });
             }
           }
         })

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Lista de medicos
+    </title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header>
+      <h1>Lista de médicos</h1>
+     
+    </header>
+    <main>
+      {% for medicos in medicos %}
+      <article>
+      	<h4>Nombre</h4>
+        <p>{{medicos.nombre}}</p>
+	<h4>Apellidos</h4>
+        <p>{{medicos.apellidos}}<p>
+        <h4>Email</h4>
+        <p>{{medicos.email}}</p>
+        <h4>Especialidad</h4>
+      	<p>{{medicos.especialidad}}</p>
+      	<h4>Numero de colegiado</h4>
+        <p>{{medicos.numero_de_colegiado}}<p>
+        <h4>Activo</h4>
+        <p>{{medicos.activo}}</p>
+      </article>
+			{% endfor %}
+    </main>
+
+      
+    <footer>
+      (c) 2026 Fernando Puig
+    </footer>
+  </body>
+</html>

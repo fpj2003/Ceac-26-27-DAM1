@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Lista de médicos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+  </head>
+  <body>
+    <header>
+      <h1>Directorio de Médicos</h1>
+      <a href="/formulario" class="btn">Añadir Médico</a>
+    </header>
+    <main>
+      {% if medicos %}
+          {% for medico in medicos %}
+          <article class="card">
+            <div class="card-grid">
+                <div>
+                    <h4>Nombre y Apellidos</h4>
+                    <p>{{medico.nombre}} {{medico.apellidos}}</p>
+                </div>
+                <div>
+                    <h4>Email</h4>
+                    <p>{{medico.email}}</p>
+                </div>
+                <div>
+                    <h4>Especialidad</h4>
+                    <p>{{medico.especialidad}}</p>
+                </div>
+                <div>
+                    <h4>Nº de Colegiado</h4>
+                    <p>{{medico.numero_de_colegiado}}</p>
+                </div>
+                <div>
+                    <h4>Estado</h4>
+                    <p>
+                        <span class="badge {% if medico.activo == '1' or medico.activo == 1 %}badge-active{% else %}badge-inactive{% endif %}">
+                            {% if medico.activo == '1' or medico.activo == 1 %}Activo{% else %}Inactivo{% endif %}
+                        </span>
+                    </p>
+                </div>
+            </div>
+          </article>
+          {% endfor %}
+      {% else %}
+          <div class="empty-state">
+              <h2>No hay médicos registrados</h2>
+              <p>Aún no se ha añadido ningún profesional al sistema o no se ha podido conectar a la base de datos.</p>
+          </div>
+      {% endif %}
+    </main>
+    <footer>
+      &copy; 2026 Fernando Puig - Sistema de Gestión Médica
+    </footer>
+  </body>
+</html>
